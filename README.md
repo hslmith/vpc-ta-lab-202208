@@ -19,31 +19,37 @@ I have chosen **Dallas us-south** for this lab
 
 
 
-Navigate to VPC
-Pin VPC to Hamburger Menu
-Choose VPC’s within VPC Infrastructure
-This will take you to the overview page.
+## Navigate to VPC
+1. Click top left hamburder menu  
+2. Scroll down to **VPC Infrastructure**
+3. Click the Pin next to VPC Infrastructure to pint he menu otion to the top.
+4. Choose Overview within VPC Infrastructure. This will take you into the VPC landing page.
 
 
-Create a SSH Key
-Before you can add a key in the IBM Cloud console, you must have your SSH key available. Your SSH key must be an RSA key with a key size of either 2048 bits or 4096 bits.
+## Create a SSH Key
+>Before you can add a key in the IBM Cloud console, you must have your SSH key available. Your SSH key must be an RSA key with a key size of either 2048 bits or 4096 bits.
 
-{Optional}
-Mac or Linux:
-	In a Terminal Window run the following command
-```
-ssh-keygen -b 4096 -C “lab"
-```
-	Press Enter for location
-	Leave passphrase blank and press enter
-	Press Enter for confirmation
-The key will be saved to /Users/<USERNAME>/.ssh/id_rsa.pub
-To view the public key run the following command
-	'cat /Users/<USERNAME>/.ssh/id_rsa.pub'
 
-Copy this text and use it in the directions that follow.
-Windows:
-{End Optional}
+
+>{Optional}
+>Mac or Linux:
+>In a Terminal Window run the following command
+> ```
+> ssh-keygen -b 4096 -C “lab"
+> ```
+>	Press Enter for location
+>	Leave passphrase blank and press enter
+>	Press Enter for confirmation
+>The key will be saved to /Users/<USERNAME>/.ssh/id_rsa.pub
+
+>To view the public key run the following command
+> ```
+> 'cat /Users/<USERNAME>/.ssh/id_rsa.pub'
+> ```
+> Copy this text and use it in the directions that follow.
+
+> Windows:
+>{End Optional}
 
 Copy the public key from the github repo.
 
