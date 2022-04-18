@@ -7,14 +7,15 @@
 
 ## Login to IBM Cloud Portal
 
-Decide on a Region to create this demo: US South (Dallas) or US East Washington DC
+Decide on a Region to create this demo: US South (Dallas) or US East Washington DC<br>
 I have chosen **Dallas us-south** for this lab 
 
-{Optional}
-Check IAM Permissions
-	Add Console Administrator
 
-{End Optional}
+>{Optional}
+>#### Check IAM Permissions
+> - Add Console Administrator
+>
+>{End Optional}
 
 
 
