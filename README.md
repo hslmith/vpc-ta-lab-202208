@@ -1,8 +1,7 @@
 # VPC Mini Lab
 ### URLS Needed in this Mini Lab
-[IBM Cloud Portal] (http://cloud.ibm.com)
-
-[This Lab Repo] (https://github.com/hslmith/vpc-mini-lab)
+- [IBM Cloud Portal] (http://cloud.ibm.com)
+- [This Lab Repo] (https://github.com/hslmith/vpc-mini-lab)
 
 
 
@@ -31,7 +30,9 @@ Before you can add a key in the IBM Cloud console, you must have your SSH key av
 {Optional}
 Mac or Linux:
 	In a Terminal Window run the following command
-		'ssh-keygen -b 4096 -C “lab"'
+		'''
+		ssh-keygen -b 4096 -C “lab"
+		'''
 	Press Enter for location
 	Leave passphrase blank and press enter
 	Press Enter for confirmation
