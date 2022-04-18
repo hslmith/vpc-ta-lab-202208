@@ -1,0 +1,15 @@
+#cloud-config
+
+package-update: true
+package_upgrade: true
+packages:
+  - build-essential
+  - git
+  - unzip
+  - nginx-full
+  - curl
+  - httrack
+
+runcmd:
+- httrack http://52.118.98.128 -O var/www/html/
+- systemctl restart nginx
