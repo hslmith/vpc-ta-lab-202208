@@ -96,17 +96,19 @@ The last operation should return to your list of VPCs in the region you have bee
 
 
 
-Add Public Gateway to VPC
-Navigate back to your VPC.
-	Expand ‘Network Section’
-	Choose VPC’s
-	Enter your VPC via the HyperLink
+## Add Public Gateway to VPC
+1. Navigate back to your VPC.
+	1. Expand ‘Network Section’
+	2. Choose VPC’s
+	3. Enter your VPC via the HyperLink
+2. Scroll down to the ‘subnets’ section
+3. Enter the subnet for Availability Zone 1 (ex. Washington DC 1) via link in list
+4. In the bottom right-hand corner, turn on the ‘Public Gateway’ tick box to Attached
+5. Click Attach on modal window.
 
-Scroll down to the ‘subnets’ section
-Enter the subnet for Availability Zone 1 (ex. Washington DC 1) via link in list
-In the bottom right-hand corner, turn on the ‘Public Gateway’ tick box to Attached
-Click Attach on modal window.
-
+## Create Virtual Mahcine in VPC we just created and configured
+If you are no longer on the VPC detatil, navigave to your VPC using the VPCs menu option.
+While in the VPC window
 Click the ‘Attached Resources’ tab across top
 Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
 
