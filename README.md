@@ -51,7 +51,7 @@ I have chosen **Dallas us-south** for this lab
 > Windows: Use [PuttyGen](https://www.ssh.com/academy/ssh/putty/windows/puttygen)<br>
 >{End Optional}
 
-Copy the [public key] (pubkey_rsa) from the github repo.
+Copy the [public key](pubkey_rsa) from the github repo.
 
 Expand the Compute Menu and select ‘SSH Keys’
 Choose your region that you want to complete this lab in from the drop down in the header.
