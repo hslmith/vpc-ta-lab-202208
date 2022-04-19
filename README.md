@@ -130,9 +130,14 @@ The last operation should return to your list of VPCs in the region you have bee
 	Double check your parameters
 		Click ‘Create Virtual Server’
 	```
-This will take you back to the ‘Virtual Server’ list and you should see your instance in a starting state.  This will take a couple of minutes. 
-Break: 90 seconds
-Click the refresh icon <icon> (top right in the header of the instance list.
+This will take you back to the ‘Virtual Server’ list and you should see your instance in a starting state.  This will take a couple of minutes.
+<br>
+
+### Break: 90 seconds
+
+<br>
+
+Click the refresh icon !(irefresh_icon.png) (top right in the header of the instance list.
 You Instance should be running now.
 Enter your instance via the hyper link in the link 
 If you added console permissions to your user account, you can access the vnc or serial console from the actions menu in the top right hand corner.
