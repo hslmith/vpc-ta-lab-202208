@@ -1,7 +1,7 @@
 # VPC Mini Lab
 ### URLS Needed in this Mini Lab
-- [IBM Cloud Portal] (http://cloud.ibm.com)
-- [This Lab Repo] (https://github.com/hslmith/vpc-mini-lab)
+- [IBM Cloud Portal](http://cloud.ibm.com)
+- [This Lab Repo](https://github.com/hslmith/vpc-mini-lab)
 
 
 
@@ -48,7 +48,7 @@ I have chosen **Dallas us-south** for this lab
 >Replacing the username on your machine with USERNAME
 > Copy this text and use it in the directions that follow.
 >
-> Windows: Use [PuttyGen] (https://www.ssh.com/academy/ssh/putty/windows/puttygen)<br>
+> Windows: Use [PuttyGen](https://www.ssh.com/academy/ssh/putty/windows/puttygen)<br>
 >{End Optional}
 
 Copy the [public key] (pubkey_rsa) from the github repo.
