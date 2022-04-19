@@ -53,48 +53,45 @@ I have chosen **Dallas us-south** for this lab
 
 Copy the [public key](pubkey_rsa) from the github repo.
 
-Expand the Compute Menu and select ‘SSH Keys’
-Choose your region that you want to complete this lab in from the drop down in the header.
-Click blue “Create +” 
-SSH Keys are stored in the region. Make sure is set to the region you started with.
+1. Expand the Compute Menu and select ‘SSH Keys’
+2. Choose your region that you want to complete this lab in from the drop down in the header.
+3. Click blue “Create +” 
+4. SSH Keys are stored in the region. Make sure is set to the region you started with.
+```
 Name: MiniLab
 Resource Group: Default
 Public Key: Paste the public key you either created (id_rsa.pub) or copied from github
+```
 
+<br>
 
+## Create VPC
 
+1. Choose [VPCs](https://cloud.ibm.com/vpc-ext/network/vpcs) within VPC Infrastructure Menu
+2. Choose your region that you want to complete this lab in from the drop down in the header.
+```
+Name of VPC: vpc-<region>-qbr-demo (ex. vpc-south-qbr-demo)
+Resource Group: Default
+All other values and checkbox defaults are ok 
 
+>Note: you should have three default prefixes and subnets already created for you
+Click ***Create Virtual Private Cloud***
+```
 
-
-
-
-
-
-Create VPC
-
-Choose VPC’s within VPC Infrastructure
-	Choose Region (Dallas or Washington DC)
-	Name of VPC: vpc-<region>-qbr-demo (ex. vpc-south-qbr-demo)
-	Resource Group: Default
-	All other values and checkbox defaults are ok 
-
-Note: you should have three default prefixes and subnets already created for you
-
-
-Enter your VPC (vpc-east-qbr-demo) via the link in the list
-
-Open Security Group for port 80
-In the top right tile, locate ‘Default Security Group’ section and enter the security group via the link.
-In the SG window, click the ‘Manage Rules’ in the bottom left tile.
-Alternatively, you can navigate to the rules using rules tab across the top.
-We need to create an Inbound Rule to allow port 80.
-Click ‘Create +’ in the ‘Inbound Rules’ section.
-Protocol: TCP
-Port: port Range
-Port Min: 80
-Port Max: 80
-Source Type: Any
-Click Create
+## Edit Security Group
+The last operation should return to your list of VPCs in the region you have been working with.<br>
+1. Enter your VPC (vpc-east-qbr-demo) via the link in the list
+2. Open Security Group for port 80
+	1. In the top right tile, locate ‘Default Security Group’ section and enter the security group via the link.
+ 	2. In the SG window, click the ‘Manage Rules’ in the bottom left tile. Alternatively, you can navigate to the rules using rules tab across the top.
+	3. Create an Inbound Rule to allow port 80.
+		1. Click ‘Create +’ in the ‘Inbound Rules’ section.
+		Protocol: TCP
+		Port: port Range
+		Port Min: 80
+		Port Max: 80
+		Source Type: Any
+		2. Click Create
 
 
 
