@@ -39,7 +39,7 @@ I have chosen **Dallas us-south** for this lab
 >	Press Enter for location;
 >	Leave passphrase blank and press enter;
 >	Press Enter for confirmation of passphrase;
->The key will be saved to /Users\/<USERNAME>/.ssh/id_rsa.pub
+>The key will be saved to '/Users/<USERNAME>/.ssh/id_rsa.pub'
 
 >To view the public key run the following command
 > ```
