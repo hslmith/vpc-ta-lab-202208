@@ -86,11 +86,13 @@ The last operation should return to your list of VPCs in the region you have bee
  	2. In the SG window, click the ‘Manage Rules’ in the bottom left tile. Alternatively, you can navigate to the rules using rules tab across the top.
 	3. Create an Inbound Rule to allow port 80.
 		1. Click ‘Create +’ in the ‘Inbound Rules’ section.
+		```
 		Protocol: TCP
 		Port: port Range
 		Port Min: 80
 		Port Max: 80
 		Source Type: Any
+		```
 		2. Click Create
 
 
