@@ -107,28 +107,27 @@ The last operation should return to your list of VPCs in the region you have bee
 5. Click Attach on modal window.
 
 ## Create Virtual Mahcine in VPC we just created and configured
-If you are no longer on the VPC detatil, navigave to your VPC using the VPCs menu option.
-While in the VPC window
-Click the ‘Attached Resources’ tab across top
-Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
+1. If you are no longer on the VPC detatil, navigave to your VPC using the VPCs menu option.
+2. While in the VPC window, click the ‘Attached Resources’ tab across top
+3. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
+	```
+	Choose ‘Intel’ type
+	Choose ‘Public’ Hosting Type
+	The correct location should be selected but if not, choose the same Location as you VPC that you created above
 
-Choose ‘Intel’ type
-Choose ‘Public’ Hosting Type
-The correct location should be selected but if not, choose the same Location as you VPC that you created above
+	Name your instance ‘in-south-qbr-demo01’
+	Resource Group: Default
+	Operating System: Ubuntu 20.04
+	Profile: Default is OK
+	Choose the SSH Key created above
+	User Data: Copy and paster the the [user data](instance-user-data) file provided in github
+		
+		Scroll down to Networking Section
+		Select you VPC you created in earlier step
 
-Name your instance ‘in-south-qbr-demo01’
-Resource Group: Default
-Operating System: Ubuntu 20.04
-Profile: Default is OK
-Choose the SSH Key created above
-User Data: Use the user data file provided in github
-	
-	Scroll down to Networking Section
-	Select you VPC you created in earlier step
-
-Double check your parameters
-	Click ‘Create Virtual Server’
-
+	Double check your parameters
+		Click ‘Create Virtual Server’
+	```
 This will take you back to the ‘Virtual Server’ list and you should see your instance in a starting state.  This will take a couple of minutes. 
 Break: 90 seconds
 Click the refresh icon <icon> (top right in the header of the instance list.
