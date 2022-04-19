@@ -150,29 +150,26 @@ Your Instance should be running now.
 5. Within about 10 seconds, you should see a publicly accessible IP address appear in your Network Interface line.  Click the IP which will copy it.
 6. Paste the IP in any avaiable web browser. You should have a functioning website.
 
+<br>
+
+
 
 # Optional 
 ### If that was a breeze, lets increase the avability of our website by adding a second zone and a loab balancer.
 
 ## Navigate to VPC
-1. Click top left hamburger menu  
-2. Scroll down to **VPC Infrastructure**
-3. Click the Pin next to VPC Infrastructure to pin the menu otion to the top.
-4. Choose **Overview** within the **VPC Infrastructure** menu. This will take you into the VPC landing page.
+1. Click VPC's in the menu 
 
 
 ## Add Public Gateway to VPC subnet
-1. Navigate back to your VPC.
-	1. Expand ‘Network Section’
-	2. Choose VPC’s
-	3. Enter your VPC via the HyperLink
+1. Enter your VPC via the HyperLink
 2. Scroll down to the ‘subnets’ section
 3. Enter the subnet for ==Availability Zone 2 (ex. Washington DC 2)== via link in list
 4. In the bottom right-hand corner, turn on the ‘Public Gateway’ tick box to Attached
 5. Click Attach on modal window.
 
 ## Create Virtual Mahcine in  Zone 2 
-1. If you are no longer on the VPC detatil, navigave to your VPC using the VPCs menu option.
+1. If you are no longer on the VPC detatil, navigate to your VPC using the VPCs menu option.
 2. While in the VPC window, click the ‘Attached Resources’ tab across top
 3. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
 	```
@@ -180,7 +177,7 @@ Your Instance should be running now.
 	Choose ‘Public’ Hosting Type
 	The correct location should be selected but if not, choose the same Location as you VPC that you created above
 
-	Name your instance ==in-south-qbr-demo02==
+	Name your instance **in-south-qbr-demo02**
 	Resource Group: Default
 	Operating System: Ubuntu 20.04
 	Profile: Default is OK
@@ -205,11 +202,55 @@ Your Instance should be running now.
 
 
 ## Create an Application Load Balancer 
+1. Clike the Laod Balancers Menu Option
+2. Click the Blue "Create +" button to create a new load balancer instance
+3. Use the following options
+	```
+	Region: Selected Region for Lab
+	Name: "alb-south-qbr-lab"
+	Resource Group: Default
+	Load Balancer: Application Load Balancer
+	Virtual Private Cloud: Your Lab VPC (ex. vpc-south-qbr-demo)
+	Type: Public
+	Subnets: Choose the two subnets in Zone 1 and Zone 2
+	```
+4. Create Backend Pool
+	```
+	Click Black "Create +" Button
+	Name: pool-qbr-lab
+	Protocol: HTTP
+	Session Stickiness: none
+	Proxy Protocol: Disabled
+	Method: Round Robin
+	Health Check Options: Leave all default
+	Click Create 
+	```
+5. Now that your pool is created, click the new Attach Server Link
+6. Under the VPC Devices Tab, click the subnets that correspond to your VPC
+7. Add your two instnaces to the Back-end Pool by ticking the checkboxes and clicking "Configure port and weight"
+8. Use port 80 for both instnances and click attach.  This will take you back to the ALB form
+9. Create Front End Listener
+	```
+	Click Black "Create Listener +" Button and configre the following
+	Pool: pool-qbr-lab
+	Protocol: HTTP
+	Listener Port: 80
+	Click Create
+	```
+10. Click the "Create Load Balancer" button.  This will take you back to your list of Load Balancers and you should see your creating.
+
+This will take a couple of minutes to create
+
+### Break: 120 seconds
+
+11. Click the refresh icon <img src="/assets/images/refresh_icon.png" width="40" height="40"> (top right in the header of the LB list occasionally until the Status is **Active** .<br>
+In the list, you should see a hostname. that will looks something like ########-us-@@@@.lb.appdomain.cloud.  Copy that host name and paste it in any available broswer.  
+
+## Congratulations, You should see your fully load blanacer website across two zones.
 
 
 
-
-Destroy Items
+# Destroy your Items
 FIP
 Enter Instance Page	
 Click the ‘edit’ pencil icon on the line of your network interface.
