@@ -12,7 +12,7 @@ I have chosen **Dallas us-south** for this lab
 
 
 >{Optional}
->#### Check IAM Permissions
+>### Check IAM Permissions
 > - Add Console Administrator
 >
 >{End Optional}
@@ -20,15 +20,14 @@ I have chosen **Dallas us-south** for this lab
 
 
 ## Navigate to VPC
-1. Click top left hamburder menu  
+1. Click top left hamburger menu  
 2. Scroll down to **VPC Infrastructure**
-3. Click the Pin next to VPC Infrastructure to pint he menu otion to the top.
-4. Choose Overview within VPC Infrastructure. This will take you into the VPC landing page.
+3. Click the Pin next to VPC Infrastructure to pin the menu otion to the top.
+4. Choose **Overview** within the **VPC Infrastructure** menu. This will take you into the VPC landing page.
 
 
 ## Create a SSH Key
->Before you can add a key in the IBM Cloud console, you must have your SSH key available. Your SSH key must be an RSA key with a key size of either 2048 bits or 4096 bits.
-
+>Before you can add a key in the IBM Cloud console, you must make your SSH key available. Your SSH key must be an RSA key with a key size of either 2048 bits or 4096 bits.
 
 
 >{Optional}
@@ -37,10 +36,10 @@ I have chosen **Dallas us-south** for this lab
 > ```
 > ssh-keygen -b 4096 -C “lab"
 > ```
->	Press Enter for location
->	Leave passphrase blank and press enter
->	Press Enter for confirmation
->The key will be saved to /Users/<USERNAME>/.ssh/id_rsa.pub
+>	Press Enter for location;
+>	Leave passphrase blank and press enter;
+>	Press Enter for confirmation of passphrase;
+>The key will be saved to /Users\/<USERNAME>/.ssh/id_rsa.pub
 
 >To view the public key run the following command
 > ```
