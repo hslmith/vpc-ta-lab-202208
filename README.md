@@ -39,18 +39,19 @@ I have chosen **Dallas us-south** for this lab
 >	Press Enter for location;
 >	Leave passphrase blank and press enter;
 >	Press Enter for confirmation of passphrase;
->The key will be saved to '/Users/<USERNAME>/.ssh/id_rsa.pub'
-
+>The key will be saved to /Users/<USERNAME>/.ssh/id_rsa.pub
+>
 >To view the public key run the following command
 > ```
 > 'cat /Users/<USERNAME>/.ssh/id_rsa.pub'
 > ```
+>Replacing the username on your machine with <USERNAME>
 > Copy this text and use it in the directions that follow.
-
-> Windows:
+>
+> Windows: Use [PuttyGen] (https://www.ssh.com/academy/ssh/putty/windows/puttygen)
 >{End Optional}
 
-Copy the public key from the github repo.
+Copy the [public key](pubkey_rsa) from the github repo.
 
 Expand the Compute Menu and select ‘SSH Keys’
 Choose your region that you want to complete this lab in from the drop down in the header.
