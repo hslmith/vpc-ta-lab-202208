@@ -57,11 +57,11 @@ Copy the [public key](pubkey_rsa) from the github repo.
 2. Choose your region that you want to complete this lab in from the drop down in the header.
 3. Click blue “Create +” 
 4. SSH Keys are stored in the region. Make sure is set to the region you started with.
-```
-Name: MiniLab
-Resource Group: Default
-Public Key: Paste the public key you either created (id_rsa.pub) or copied from github
-```
+	```
+	Name: MiniLab
+	Resource Group: Default
+	Public Key: Paste the public key you either created (id_rsa.pub) or copied from github
+	```
 
 <br>
 
@@ -69,14 +69,14 @@ Public Key: Paste the public key you either created (id_rsa.pub) or copied from 
 
 1. Choose [VPCs](https://cloud.ibm.com/vpc-ext/network/vpcs) within VPC Infrastructure Menu
 2. Choose your region that you want to complete this lab in from the drop down in the header.
-```
-Name of VPC: vpc-<region>-qbr-demo (ex. vpc-south-qbr-demo)
-Resource Group: Default
-All other values and checkbox defaults are ok 
+	```
+	Name of VPC: vpc-<region>-qbr-demo (ex. vpc-south-qbr-demo)
+	Resource Group: Default
+	All other values and checkbox defaults are ok 
 
->Note: you should have three default prefixes and subnets already created for you
-Click ***Create Virtual Private Cloud***
-```
+	>Note: you should have three default prefixes and subnets already created for you
+	Click ***Create Virtual Private Cloud***
+	```
 
 ## Edit Security Group
 The last operation should return to your list of VPCs in the region you have been working with.<br>
