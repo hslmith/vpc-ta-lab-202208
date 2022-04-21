@@ -114,7 +114,7 @@ The last operation should return to your list of VPCs in the region you have bee
 	>***Operating System:*** Ubuntu 20.04<br>
 	>***Profile:*** Click 'view all profiles', select memory and choose 'mx2-2x16'<br>
 
-![-](/assets/images/sc-profiles-memory.png)
+	![-](/assets/images/sc-profiles-memory.png)
 	
 	>***SSH keys:*** minilab<br>
 	>***User Data:*** Copy and paste the the [user_data](instance-user-data) file provided in github
