@@ -114,13 +114,12 @@ The last operation should return to your list of VPCs in the region you have bee
 	>***Operating System:*** Ubuntu 20.04<br>
 	>***Profile: Default Profile is OK<br>
 	>Choose the SSH Key created in previous step<br>
-	>***User Data:*** Copy and paste the the ***instance-user-data*** file provided in github
+	>***User Data:*** Copy and paste the the [user_data](instance-user-data) file provided in github
 
 	![-](/assets/images/sc-github.png)
 		
 	>Scroll down to Networking Section<br>
 	>Select you VPC you created in earlier step<br>
-	><br>
 	>Double check your parameters<br>
 	>Click ‘Create Virtual Server’<br>
 	
