@@ -35,10 +35,10 @@ I have chosen **Dallas us-south** for this lab
 >
 >To view the public key run the following command
 > ```
-> 'cat /Users/<USERNAME>/.ssh/id_rsa.pub'
+> cat /Users/<USERNAME>/.ssh/id_rsa.pub'
 > ```
->Replacing the username on your machine with USERNAME
-> Copy this text and use it in the directions that follow.
+>Replacing the username on your machine with USERNAME. <br>
+>Copy this text and use it in the directions that follow.
 >
 > Windows: Use [PuttyGen](https://www.ssh.com/academy/ssh/putty/windows/puttygen)<br>
 >### {End Optional}
@@ -49,11 +49,10 @@ Copy the [public key](pubkey_rsa) from the github repo.
 2. Choose your region that you want to complete this lab in from the drop down in the header.
 3. Click blue “Create +” 
 4. SSH Keys are stored in the region. Make sure it is set to the region you started with.
-	```
-	Name: minilab
-	Resource Group: Default
-	Public Key: Paste the public key you either created in the optional section above(id_rsa.pub) or copy and paste (pubkey_rsa) from github
-	```
+	
+>Name: minilab<br>
+>Resource Group: Default<br>
+>Public Key: Paste the public key you either created in the optional section above(id_rsa.pub) or copy and paste (pubkey_rsa) from github<br>
 
 <br>
 
@@ -62,14 +61,14 @@ Copy the [public key](pubkey_rsa) from the github repo.
 1. Choose [VPCs](https://cloud.ibm.com/vpc-ext/network/vpcs) within VPC Infrastructure Menu
 2. Choose your region that you want to complete this lab in from the drop down in the header.
 3. Click the blue "Create +" button.
-	```
-	Name of VPC: vpc-<replace with east or south>-qbr-demo (ex. vpc-south-qbr-demo)
-	Resource Group: Default
-	All other values and checkbox defaults are ok 
 
-	>Note: you should have three default prefixes and subnets already created for you
-	Click ***Create Virtual Private Cloud***
-	```
+>***Name:*** vpc-<replace with east or south>-qbr-demo (ex. vpc-south-qbr-demo)<br>
+>***Resource Group:*** Default<br>
+>All other values and checkbox defaults are ok<br>
+
+>Note: you should have three default prefixes and subnets already created for you<br>
+>Click ***Create Virtual Private Cloud***<br><br>
+
 
 ## Edit Security Group
 The last operation should return to your list of VPCs in the region you have been working with.<br>
@@ -79,13 +78,12 @@ The last operation should return to your list of VPCs in the region you have bee
  	2. In the SG window, click the ‘Manage Rules’ in the bottom left tile. Alternatively, you can navigate to the rules using rules tab across the top.
 	3. Create an Inbound Rule to allow port 80.
 		1. Click ‘Create +’ in the ‘Inbound Rules’ section.
-		```
-		Protocol: TCP
-		Port: port Range
-		Port Min: 80
-		Port Max: 80
-		Source Type: Any
-		```
+		>***Protocol:*** TCP<br>
+		>***Port:*** port Range<br>
+		>***Port Min:*** 80<br>
+		>***Port Max:*** 80<br>
+		>***Source Type:*** Any<br><br>
+
 		2. Click Create
 
 
@@ -106,26 +104,26 @@ The last operation should return to your list of VPCs in the region you have bee
 2. Scroll down to the subnet section and enter the subnet for zone 1.
 3. While in the VPC window, click the ‘Attached Resources’ tab across top
 4. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
-	```
-	Choose ‘Intel’ type
-	Choose ‘Public’ Hosting Type
+	
+	Type: Intel
+	Hosting Type: Public
 	The correct location should be selected but if not, choose the same Location as you VPC that you created above
 
-	Name your instance ‘in-<selected region>-qbr-demo01’
-	Resource Group: Default
-	Operating System: Ubuntu 20.04
-	Profile: Default is OK
-	Choose the SSH Key created in previous step
-	User Data: Copy and paste the the ***instance-user-data*** file provided in github
+	>***Name:*** in-<selected region>-qbr-demo01<br>
+	>***Resource Group:*** Default<br>
+	>***Operating System:*** Ubuntu 20.04<br>
+	>***Profile: Default Profile is OK<br>
+	>Choose the SSH Key created in previous step<br>
+	>***User Data:*** Copy and paste the the ***instance-user-data*** file provided in github
 
 	![-](/assets/images/sc-github.png)
 		
-	Scroll down to Networking Section
-	Select you VPC you created in earlier step
+	>Scroll down to Networking Section
+	>Select you VPC you created in earlier step
 
-	Double check your parameters
-		Click ‘Create Virtual Server’
-	```
+	>Double check your parameters
+	>Click ‘Create Virtual Server’
+	
 This will take you back to the ‘Virtual Server’ list and you should see your instance in a starting state.  This will take a couple of minutes.
 <br>
 
