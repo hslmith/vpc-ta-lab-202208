@@ -137,7 +137,7 @@ Your Instance should be running now.
 
 ## Add a floating IP
 1. Scroll down to the ‘Network Interfaces’ section at the bottom of the screen.
-2. Click the ‘edit’ pencil icon on the line of your network interface.
+2. Click the ‘edit’ pencil icon on the line of your network interface.<br>
 ![-](/assets/images/sc-pencil-nic.png)
 3. In the slide out window you will see a option for ‘Floating IP Address’.  In that drop down, select ‘Reserve a New Floating IP’
 4. Click ‘Save’
@@ -158,7 +158,7 @@ Your Instance should be running now.
 ## Add Public Gateway to VPC subnet
 1. Enter your VPC via the HyperLink
 2. Scroll down to the ‘subnets’ section
-3. Enter the subnet for ==Availability Zone 2 (ex. Washington DC 2)== via link in list
+3. Enter the subnet for <mark>Availability Zone 2 (ex. Washington DC 2)</mark> via link in list
 4. In the bottom right-hand corner, turn on the ‘Public Gateway’ tick box to Attached
 5. Click Attach on modal window.
 
@@ -167,20 +167,20 @@ Your Instance should be running now.
 2. While in the VPC window, click the ‘Attached Resources’ tab across top
 3. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
 	
-	>***Choose ‘Intel’ type
-	>***Choose ‘Public’ Hosting Type
+	>***Architecture:*** Intel<br>
+	>***Hosting Type:*** Public<br>
 	>The correct location should be selected but if not, choose the same Location as you VPC that you created above
-
+	>
 	>***Name:*** in-south-qbr-demo02<br>
 	>***Resource Group:*** Default
 	>***Operating System:*** Ubuntu 20.04
 	>***Profile:*** Default is OK
 	>***SSH keys:*** minilab<br>
 	>***User Data:*** Copy and paste the the [user_data](instance-user-data) file provided in github<br><br>
-		
+	>	
 	>Scroll down to Networking Section<br>
 	>Select you VPC you created in earlier step<br><br>
-
+	>
 	>Double check your parameters<br>
 	>Click ‘Create Virtual Server’<br>
 
@@ -199,38 +199,38 @@ Your Instance should be running now.
 1. Click the Load Balancers Menu Option
 2. Click the Blue "Create +" button to create a new load balancer instance
 3. Use the following options
-	```
-	Region: Selected Region for Lab
-	Name: "alb-south-qbr-lab"
-	Resource Group: Default
-	Load Balancer: Application Load Balancer
-	Virtual Private Cloud: Your Lab VPC (ex. vpc-south-qbr-demo)
-	Type: Public
-	Subnets: Choose the two subnets in Zone 1 and Zone 2
-	```
+	
+	>***Region:*** Selected Region for Lab<br>
+	>***Name:*** "alb-south-qbr-lab"<br>
+	>***Resource Group:*** Default<br>
+	>***Load Balancer:*** Application Load Balancer<br>
+	>***Virtual Private Cloud:*** Your Lab VPC (ex. vpc-south-qbr-demo)<br>
+	>***Type:*** Public<br>
+	>***Subnets:*** Choose the two subnets in Zone 1 and Zone 2<br>
+	
 4. Create Backend Pool
-	```
-	Click Black "Create +" Button
-	Name: pool-qbr-lab
-	Protocol: HTTP
-	Session Stickiness: none
-	Proxy Protocol: Disabled
-	Method: Round Robin
-	Health Check Options: Leave all default
-	Click Create 
-	```
+	
+	>Click Black "Create +" Button<br>
+	>***Name:*** pool-qbr-lab<br>
+	>***Protocol:*** HTTP<br>
+	>***Session Stickiness:*** none<br>
+	>***Proxy Protocol:*** Disabled<br>
+	>***Method:*** Round Robin<br>
+	>***Health Check Options:*** Leave all default<br>
+	>Click Create <br>
+	
 5. Now that your pool is created, click the new Attach Server Link
 6. Under the VPC Devices Tab, click the subnets that correspond to your VPC
 7. Add your two instnaces to the Back-end Pool by ticking the checkboxes and clicking "Configure port and weight"
 8. Use port 80 for both instnances and click attach.  This will take you back to the ALB form
 9. Create Front End Listener
-	```
-	Click Black "Create Listener +" Button and configre the following
-	Pool: pool-qbr-lab
-	Protocol: HTTP
-	Listener Port: 80
-	Click Create
-	```
+	
+	>Click Black "Create Listener +" Button and configre the following<br>
+	>***Pool:*** pool-qbr-lab<br>
+	>***Protocol:*** HTTP<br>
+	>***Listener Port:*** 80<br>
+	>Click Create<br>
+
 10. Click the "Create Load Balancer" button.  This will take you back to your list of Load Balancers and you should see your creating.
 
 This will take a couple of minutes to create
