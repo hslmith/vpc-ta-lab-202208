@@ -117,6 +117,8 @@ The last operation should return to your list of VPCs in the region you have bee
 	Profile: Default is OK
 	Choose the SSH Key created in previous step
 	User Data: Copy and paste the the ***instance-user-data*** file provided in github
+
+	![-](/assets/images/sc-github.png)
 		
 	Scroll down to Networking Section
 	Select you VPC you created in earlier step
@@ -176,13 +178,13 @@ Your Instance should be running now.
 	Operating System: Ubuntu 20.04
 	Profile: Default is OK
 	Choose the SSH Key created above
-	User Data: Copy and paster the the [user data](instance-user-data) file provided in github
+	User Data: Copy and paster the the ***instance-user-data*** file provided in github
 		
-		Scroll down to Networking Section
-		Select you VPC you created in earlier step
+	Scroll down to Networking Section
+	Select you VPC you created in earlier step
 
 	Double check your parameters
-		Click ‘Create Virtual Server’
+	Click ‘Create Virtual Server’
 	```
 This will take you back to the ‘Virtual Server’ list and you should see your instance in a starting state.  This will take a couple of minutes.
 <br>
