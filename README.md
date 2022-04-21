@@ -14,7 +14,7 @@ I have chosen **Dallas us-south** for this lab
 ## Navigate to VPC
 1. Click top left hamburger menu  
 2. Scroll down to **VPC Infrastructure**
-3. Click the Pin next to VPC Infrastructure to pin the menu otion to the top.
+3. Click the Pin next to VPC Infrastructure to pin the menu option to the top.
 4. Choose **Overview** within the **VPC Infrastructure** menu. This will take you into the VPC landing page.
 
 
@@ -48,11 +48,11 @@ Copy the [public key](pubkey_rsa) from the github repo.
 1. Expand the Compute Menu and select ‘SSH Keys’
 2. Choose your region that you want to complete this lab in from the drop down in the header.
 3. Click blue “Create +” 
-4. SSH Keys are stored in the region. Make sure is set to the region you started with.
+4. SSH Keys are stored in the region. Make sure it is set to the region you started with.
 	```
 	Name: MiniLab
 	Resource Group: Default
-	Public Key: Paste the public key you either created (id_rsa.pub) or copied from github
+	Public Key: Paste the public key you either created in the optional section above(id_rsa.pub) or copy and paste (pubkey_rsa) from github
 	```
 
 <br>
@@ -61,6 +61,7 @@ Copy the [public key](pubkey_rsa) from the github repo.
 
 1. Choose [VPCs](https://cloud.ibm.com/vpc-ext/network/vpcs) within VPC Infrastructure Menu
 2. Choose your region that you want to complete this lab in from the drop down in the header.
+3. Click the blue "Create +" button.
 	```
 	Name of VPC: vpc-<region>-qbr-demo (ex. vpc-south-qbr-demo)
 	Resource Group: Default
@@ -100,8 +101,8 @@ The last operation should return to your list of VPCs in the region you have bee
 4. In the bottom right-hand corner, turn on the ‘Public Gateway’ tick box to Attached
 5. Click Attach on modal window.
 
-## Create Virtual Mahcine in VPC we just created and configured
-1. If you are no longer on the VPC detatil, navigave to your VPC using the VPCs menu option.
+## Create Virtual Machine in VPC we just created and configured
+1. If you are no longer on the VPC detail, navigave to your VPC details page using the VPCs menu option.
 2. While in the VPC window, click the ‘Attached Resources’ tab across top
 3. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
 	```
@@ -114,10 +115,10 @@ The last operation should return to your list of VPCs in the region you have bee
 	Operating System: Ubuntu 20.04
 	Profile: Default is OK
 	Choose the SSH Key created above
-	User Data: Copy and paster the the [user data](instance-user-data) file provided in github
+	User Data: Copy and paste the the [user data] (instance-user-data) file provided in github
 		
-		Scroll down to Networking Section
-		Select you VPC you created in earlier step
+	Scroll down to Networking Section
+	Select you VPC you created in earlier step
 
 	Double check your parameters
 		Click ‘Create Virtual Server’
