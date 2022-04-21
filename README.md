@@ -191,7 +191,7 @@ Your Instance should be running now.
 	>Click ‘Create Virtual Server’<br>
 
 This will take you back to the ‘Virtual Server’ list and you should see your instance in a starting state.  This will take a couple of minutes.
-<br>
+<br><br><br>
 
 ### Break: 90 seconds
 
@@ -251,12 +251,7 @@ In the list, you should see a hostname. that will looks something like ########-
 
 
 # Destroy your Items
-FIP
-Enter Instance Page	
-Click the ‘edit’ pencil icon on the line of your network interface.
-Select ‘Unbind Current Floating IP’, Click Save
-Instance
-	Within instance Page, choose Actions menu in the top right and select ‘Delete.
+
  
 
 
