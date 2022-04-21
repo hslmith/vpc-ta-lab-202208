@@ -119,6 +119,8 @@ The last operation should return to your list of VPCs in the region you have bee
 	>***SSH keys:*** minilab<br>
 	>***User Data:*** Copy and paste the the [user_data](instance-user-data) file provided in github
 
+
+
 	![-](/assets/images/sc-github.png)
 		
 	>Scroll down to Networking Section<br>
