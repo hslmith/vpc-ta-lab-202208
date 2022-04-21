@@ -115,7 +115,7 @@ The last operation should return to your list of VPCs in the region you have bee
 	Operating System: Ubuntu 20.04
 	Profile: Default is OK
 	Choose the SSH Key created above
-	User Data: Copy and paste the the <a href="instance-user-data">user data</a> file provided in github
+	User Data: Copy and paste the the \<a href="instance-user-data">user data</a> file provided in github
 		
 	Scroll down to Networking Section
 	Select you VPC you created in earlier step
