@@ -113,7 +113,7 @@ The last operation should return to your list of VPCs in the region you have bee
 	>***Resource Group:*** Default<br>
 	>***Operating System:*** Ubuntu 20.04<br>
 	>***Profile: Default Profile is OK<br>
-	>Choose the SSH Key created in previous step<br>
+	>***SSH keys:*** minilab<br>
 	>***User Data:*** Copy and paste the the [user_data](instance-user-data) file provided in github
 
 	![-](/assets/images/sc-github.png)
@@ -174,7 +174,7 @@ Your Instance should be running now.
 	Resource Group: Default
 	Operating System: Ubuntu 20.04
 	Profile: Default is OK
-	Choose the SSH Key created above
+	SSH keys: minilab
 	User Data: Copy and paster the the ***instance-user-data*** file provided in github
 		
 	Scroll down to Networking Section
@@ -195,7 +195,7 @@ Your Instance should be running now.
 
 
 ## Create an Application Load Balancer 
-1. Clike the Laod Balancers Menu Option
+1. Click the Load Balancers Menu Option
 2. Click the Blue "Create +" button to create a new load balancer instance
 3. Use the following options
 	```
