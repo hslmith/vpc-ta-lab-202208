@@ -54,9 +54,9 @@ Copy the [public key](pubkey_rsa) from the github repo.
 >Resource Group: Default<br>
 >Public Key: Paste the public key you either created in the optional section above(id_rsa.pub) or copy and paste (pubkey_rsa) from github<br>
 ![-](/assets/images/sshkey-create.png)
-<br>
+>Click Create<br>
 
-## Create VPC
+## Create your VPC
 
 1. Choose [VPCs](https://cloud.ibm.com/vpc-ext/network/vpcs) within VPC Infrastructure Menu
 2. Choose your region that you want to complete this lab in from the drop down in the header.
@@ -83,7 +83,7 @@ The last operation should return to your list of VPCs in the region you have bee
 		>***Port Min:*** 80<br>
 		>***Port Max:*** 80<br>
 		>***Source Type:*** Any<br>
-
+		![-](/assets/images/sc-sg-inbound-edit.png)
 		2. Click Create
 
 
