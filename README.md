@@ -138,6 +138,7 @@ Your Instance should be running now.
 ## Add a floating IP
 1. Scroll down to the ‘Network Interfaces’ section at the bottom of the screen.
 2. Click the ‘edit’ pencil icon on the line of your network interface.
+![-](/assets/images/sc-pencil-nic.png)
 3. In the slide out window you will see a option for ‘Floating IP Address’.  In that drop down, select ‘Reserve a New Floating IP’
 4. Click ‘Save’
 5. Within about 10 seconds, you should see a publicly accessible IP address appear in your Network Interface line.  Click the IP which will copy it.
@@ -182,7 +183,7 @@ Your Instance should be running now.
 
 	>Double check your parameters<br>
 	>Click ‘Create Virtual Server’<br>
-	
+
 This will take you back to the ‘Virtual Server’ list and you should see your instance in a starting state.  This will take a couple of minutes.
 <br>
 
