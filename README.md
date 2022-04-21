@@ -165,24 +165,24 @@ Your Instance should be running now.
 1. If you are no longer on the VPC detatil, navigate to your VPC using the VPCs menu option.
 2. While in the VPC window, click the ‘Attached Resources’ tab across top
 3. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
-	```
-	Choose ‘Intel’ type
-	Choose ‘Public’ Hosting Type
-	The correct location should be selected but if not, choose the same Location as you VPC that you created above
+	
+	>***Choose ‘Intel’ type
+	>***Choose ‘Public’ Hosting Type
+	>The correct location should be selected but if not, choose the same Location as you VPC that you created above
 
-	Name your instance **in-south-qbr-demo02**
-	Resource Group: Default
-	Operating System: Ubuntu 20.04
-	Profile: Default is OK
-	SSH keys: minilab
-	User Data: Copy and paster the the ***instance-user-data*** file provided in github
+	>***Name:*** in-south-qbr-demo02<br>
+	>***Resource Group:*** Default
+	>***Operating System:*** Ubuntu 20.04
+	>***Profile:*** Default is OK
+	>***SSH keys:*** minilab<br>
+	>***User Data:*** Copy and paste the the [user_data](instance-user-data) file provided in github<br><br>
 		
-	Scroll down to Networking Section
-	Select you VPC you created in earlier step
+	>Scroll down to Networking Section<br>
+	>Select you VPC you created in earlier step<br><br>
 
-	Double check your parameters
-	Click ‘Create Virtual Server’
-	```
+	>Double check your parameters<br>
+	>Click ‘Create Virtual Server’<br>
+	
 This will take you back to the ‘Virtual Server’ list and you should see your instance in a starting state.  This will take a couple of minutes.
 <br>
 
