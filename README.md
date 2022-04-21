@@ -82,7 +82,7 @@ The last operation should return to your list of VPCs in the region you have bee
 		>***Port:*** port Range<br>
 		>***Port Min:*** 80<br>
 		>***Port Max:*** 80<br>
-		>***Source Type:*** Any<br><br>
+		>***Source Type:*** Any<br>
 
 		2. Click Create
 
@@ -118,11 +118,11 @@ The last operation should return to your list of VPCs in the region you have bee
 
 	![-](/assets/images/sc-github.png)
 		
-	>Scroll down to Networking Section
-	>Select you VPC you created in earlier step
-
-	>Double check your parameters
-	>Click ‘Create Virtual Server’
+	>Scroll down to Networking Section<br>
+	>Select you VPC you created in earlier step<br>
+	><br>
+	>Double check your parameters<br>
+	>Click ‘Create Virtual Server’<br>
 	
 This will take you back to the ‘Virtual Server’ list and you should see your instance in a starting state.  This will take a couple of minutes.
 <br>
