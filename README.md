@@ -7,16 +7,8 @@
 
 ## Login to IBM Cloud Portal
 
-Decide on a Region to create this demo: US South (Dallas) or US East Washington DC<br>
+Decide on a Region to create this demo and keep a mental note: US South (Dallas) or US East Washington DC<br>
 I have chosen **Dallas us-south** for this lab 
-
-
->{Optional}
->### Check IAM Permissions
-> - Add Console Administrator
->
->{End Optional}
-
 
 
 ## Navigate to VPC
@@ -30,7 +22,7 @@ I have chosen **Dallas us-south** for this lab
 >Before you can add a key in the IBM Cloud console, you must make your SSH key available. Your SSH key must be an RSA key with a key size of either 2048 bits or 4096 bits.
 
 
->{Optional}
+>### {Optional}
 >Mac or Linux:
 >In a Terminal Window run the following command
 > ```
@@ -49,7 +41,7 @@ I have chosen **Dallas us-south** for this lab
 > Copy this text and use it in the directions that follow.
 >
 > Windows: Use [PuttyGen](https://www.ssh.com/academy/ssh/putty/windows/puttygen)<br>
->{End Optional}
+>### {End Optional}
 
 Copy the [public key](pubkey_rsa) from the github repo.
 
