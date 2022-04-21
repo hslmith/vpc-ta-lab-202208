@@ -180,7 +180,7 @@ Your Instance should be running now.
 	>***Name:*** in-south-qbr-demo02<br>
 	>***Resource Group:*** Default
 	>***Operating System:*** Ubuntu 20.04
-	>***Profile:*** Default is OK
+	>***Profile:*** Click 'view all profiles', select memory and choose 'mx2-2x16'<br>
 	>***SSH keys:*** minilab<br>
 	>***User Data:*** Copy and paste the the [user_data](instance-user-data) file provided in github<br><br>
 	>	
