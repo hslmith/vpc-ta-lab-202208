@@ -53,7 +53,7 @@ Copy the [public key](pubkey_rsa) from the github repo.
 >Name: minilab<br>
 >Resource Group: Default<br>
 >Public Key: Paste the public key you either created in the optional section above(id_rsa.pub) or copy and paste (pubkey_rsa) from github<br>
-
+![-](/assets/images/sshkey-create.png)
 <br>
 
 ## Create VPC
