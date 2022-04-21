@@ -50,7 +50,7 @@ Copy the [public key](pubkey_rsa) from the github repo.
 3. Click blue “Create +” 
 4. SSH Keys are stored in the region. Make sure it is set to the region you started with.
 	```
-	Name: MiniLab
+	Name: minilab
 	Resource Group: Default
 	Public Key: Paste the public key you either created in the optional section above(id_rsa.pub) or copy and paste (pubkey_rsa) from github
 	```
@@ -63,7 +63,7 @@ Copy the [public key](pubkey_rsa) from the github repo.
 2. Choose your region that you want to complete this lab in from the drop down in the header.
 3. Click the blue "Create +" button.
 	```
-	Name of VPC: vpc-<region>-qbr-demo (ex. vpc-south-qbr-demo)
+	Name of VPC: vpc-<replace with east or south>-qbr-demo (ex. vpc-south-qbr-demo)
 	Resource Group: Default
 	All other values and checkbox defaults are ok 
 
@@ -102,20 +102,21 @@ The last operation should return to your list of VPCs in the region you have bee
 5. Click Attach on modal window.
 
 ## Create Virtual Machine in VPC we just created and configured
-1. If you are no longer on the VPC detail, navigave to your VPC details page using the VPCs menu option.
-2. While in the VPC window, click the ‘Attached Resources’ tab across top
-3. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
+1. If you are no longer on the VPC detail, navigate to your VPC details page using the VPCs menu option.
+2. Scroll down to the subnet section and enter the subnet for zone 1.
+3. While in the VPC window, click the ‘Attached Resources’ tab across top
+4. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
 	```
 	Choose ‘Intel’ type
 	Choose ‘Public’ Hosting Type
 	The correct location should be selected but if not, choose the same Location as you VPC that you created above
 
-	Name your instance ‘in-south-qbr-demo01’
+	Name your instance ‘in-<selected region>-qbr-demo01’
 	Resource Group: Default
 	Operating System: Ubuntu 20.04
 	Profile: Default is OK
-	Choose the SSH Key created above
-	User Data: Copy and paste the the \<a href="instance-user-data">user data</a> file provided in github
+	Choose the SSH Key created in previous step
+	User Data: Copy and paste the the ***instance-user-data*** file provided in github
 		
 	Scroll down to Networking Section
 	Select you VPC you created in earlier step
@@ -141,7 +142,7 @@ Your Instance should be running now.
 3. In the slide out window you will see a option for ‘Floating IP Address’.  In that drop down, select ‘Reserve a New Floating IP’
 4. Click ‘Save’
 5. Within about 10 seconds, you should see a publicly accessible IP address appear in your Network Interface line.  Click the IP which will copy it.
-6. Paste the IP in any avaiable web browser. You should have a functioning website.
+6. Paste the IP in any available web browser. You should have a functioning website.
 
 <br>
 
