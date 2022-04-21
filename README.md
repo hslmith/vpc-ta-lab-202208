@@ -155,7 +155,7 @@ Your Instance should be running now.
 
 
 # Optional 
-### If that was a breeze, lets increase the avability of our website by adding a second zone and a loab balancer.
+### If that was a breeze, lets increase the avability of our website by adding a second zone and a load balancer.
 
 ## Navigate to VPC
 1. Click VPC's in the menu 
