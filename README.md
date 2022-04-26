@@ -109,7 +109,7 @@ The last operation should return to your list of VPCs in the region you have bee
 	Hosting Type: Public
 	The correct location should be selected but if not, choose the same Location as you VPC that you created above
 
-	>***Name:*** in-<selected region>-qbr-demo01<br>
+	>***Name:*** in-**selected region**-qbr-demo01<br>
 	>***Resource Group:*** Default<br>
 	>***Operating System:*** Ubuntu 20.04<br>
 	>***Profile:*** Click 'view all profiles', select memory and choose 'mx2-2x16'<br>
