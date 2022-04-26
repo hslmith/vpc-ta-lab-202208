@@ -109,7 +109,7 @@ The last operation should return to your list of VPCs in the region you have bee
 	Hosting Type: Public
 	The correct location should be selected but if not, choose the same Location as you VPC that you created above
 
-	>***Name:*** in-**selected region**-qbr-demo01<br>
+	>***Name:*** in-<em>selected region</em>-qbr-demo01<br>
 	>***Resource Group:*** Default<br>
 	>***Operating System:*** Ubuntu 20.04<br>
 	>***Profile:*** Click 'view all profiles', select memory and choose 'mx2-2x16'<br>
@@ -168,7 +168,7 @@ Your Instance should be running now.
 4. In the bottom right-hand corner, turn on the ‘Public Gateway’ tick box to Attached
 5. Click Attach on modal window.
 
-## Create Virtual Mahcine in  Zone 2 
+## Create Virtual Machine in  Zone 2 
 1. If you are no longer on the VPC detatil, navigate to your VPC using the VPCs menu option.
 2. While in the VPC window, click the ‘Attached Resources’ tab across top
 3. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
