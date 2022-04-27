@@ -11,7 +11,7 @@ Decide on a Region to create this demo and keep a mental note: US South (Dallas)
 I have chosen **Dallas us-south** for this lab 
 
 
-## Navigate to VPC
+## Navigate to VPC Infrastructure in IBM Cloud Portal
 1. Click top left hamburger menu  
 2. Scroll down to **VPC Infrastructure**
 3. Click the Pin next to VPC Infrastructure to pin the menu option to the top.
