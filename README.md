@@ -41,7 +41,7 @@ Copy the [public key](pubkey_rsa) from the github repo.
 2. Choose your region that you want to complete this lab in from the drop down in the header.
 3. Click the blue "Create +" button.
 
->***Name:*** vpc-*replace with east or south*-qbr-demo (ex. vpc-south-qbr-demo)<br>
+>***Name:*** vpc-**selected-region**-qbr-demo (ex. vpc-south-qbr-demo)<br>
 >***Resource Group:*** Default<br>
 >All other values and checkbox defaults are ok<br>
 
