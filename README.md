@@ -18,30 +18,9 @@ I have chosen **Dallas us-south** for this lab
 4. Choose **Overview** within the **VPC Infrastructure** menu. This will take you into the VPC landing page.
 
 
-## Create a SSH Key
+## Create a SSH Key in the IBM Cloud Portal
 >Before you can add a key in the IBM Cloud console, you must make your SSH key available. Your SSH key must be an RSA key with a key size of either 2048 bits or 4096 bits.
 
-
->### {Optional}
->Mac or Linux:
->In a Terminal Window run the following command
-> ```
-> ssh-keygen -b 4096 -C “lab"
-> ```
->	Press Enter for location;
->	Leave passphrase blank and press enter;
->	Press Enter for confirmation of passphrase;
->The key will be saved to /Users/USERNAME/.ssh/id_rsa.pub
->
->To view the public key run the following command
-> ```
-> cat /Users/<USERNAME>/.ssh/id_rsa.pub'
-> ```
->Replacing the username on your machine with USERNAME. <br>
->Copy this text and use it in the directions that follow.
->
-> Windows: Use [PuttyGen](https://www.ssh.com/academy/ssh/putty/windows/puttygen)<br>
->### {End Optional}
 
 Copy the [public key](pubkey_rsa) from the github repo.
 
