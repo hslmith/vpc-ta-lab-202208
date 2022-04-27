@@ -27,7 +27,7 @@ Copy the [public key](pubkey_rsa) from the github repo.
 1. Expand the Compute Menu and select ‘SSH Keys’
 2. Choose your region that you want to complete this lab in from the drop down in the header.
 3. Click blue “Create +” 
-4. SSH Keys are stored in the region. Make sure it is set to the region you started with.
+4. SSH Keys are stored at the regional level. Confirm you have the correct region selected. Make sure it is set to the region you started with.
 	
 >Name: minilab<br>
 >Resource Group: Default<br>
