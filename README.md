@@ -1,4 +1,14 @@
 # VPC Tech Academy Lab
+
+The following multi-zone architecture will be used
+
+99999999mage
+
+
+
+
+
+
 ### URLS Needed in this Mini Lab
 - [IBM Cloud Portal](http://cloud.ibm.com)
 - [This Lab Repo](https://github.com/hslmith/vpc-mini-lab)
@@ -35,10 +45,84 @@ Copy the [public key](pubkey_rsa) from the github repo.
 ![-](/assets/images/sshkey-create.png)
 >Click Create<br>
 
-## Create your VPC
+
+
+
+## Create your Transit VPC
+A transit  or "Hub" VPC serves as a centralized point for routing network traffic to/from the "Spoke" VPCs where workloads are running.
+A transit "Hub" VPC serves as a centralized point for routing network traffic to/from the "Spoke" VPCs where workloads are running
 
 1. Choose [VPCs](https://cloud.ibm.com/vpc-ext/network/vpcs) within VPC Infrastructure Menu
 2. Choose your region that you want to complete this lab in from the drop down in the header.
+3. Click the blue "Create +" button.
+
+>***Name:*** vpc-**selected-region**-qbr-demo (ex. vpc-south-qbr-demo)<br>
+>***Resource Group:*** Default<br>
+>All other values and checkbox defaults are ok<br>
+
+>Note: you should have three default prefixes and subnets already created for you<br>
+>Click ***Create Virtual Private Cloud***<br><br>
+
+
+## Create VNF in transit VPC
+1. If you are no longer on the VPC detail, navigate to your VPC details page using the VPCs menu option.
+2. Scroll down to the subnet section and enter the subnet for zone 1.
+3. While in the VPC window, click the ‘Attached Resources’ tab across top
+4. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
+	
+	Type: Intel
+	Hosting Type: Public
+	The correct location should be selected but if not, choose the same Location as you VPC that you created above
+
+	>***Name:*** in-<em>selected region</em>-qbr-demo01<br>
+	>***Resource Group:*** Default<br>
+	>***Operating System:*** CeentOS-7<br>
+	>***Profile:*** Click 'view all profiles', select memory and choose 'mx2-2x16'<br>
+
+	![-](/assets/images/sc-profiles-memory.png)<br>
+	
+	>
+	>***SSH keys:*** minilab<br>
+	>***User Data:*** Copy and paste the the [user_data](instance-user-data) file provided in github
+
+
+	<br><br><br>
+	![-](/assets/images/sc-github.png)
+		
+	>Scroll down to Networking Section<br>
+	>Select you VPC you created in earlier step<br>
+	>Double check your parameters<br>
+	>Click ‘Create Virtual Server’<br>
+	
+This will take you back to the ‘Virtual Server’ list and you should see your instance in a starting state.  This will take a couple of minutes.
+<br>
+
+### Break: 90 seconds
+
+<br>
+
+4. Click the refresh icon <img src="/assets/images/refresh_icon.png" width="40" height="40"> (top right in the header of the instance list.<br>
+Your Instance should be running now.
+5. Enter your instance via the hyper link in the link 
+	>Note: If you added console permissions to your user account, you can access the vnc or serial console from the actions menu in the top right hand corner.
+
+## Add a floating IP
+1. Scroll down to the ‘Network Interfaces’ section at the bottom of the screen.
+2. Click the ‘edit’ pencil icon on the line of your network interface.<br>
+![-](/assets/images/sc-pencil-nic.png)
+3. In the slide out window you will see a option for ‘Floating IP Address’.  In that drop down, select ‘Reserve a New Floating IP’
+4. Click ‘Save’
+5. Within about 10 seconds, you should see a publicly accessible IP address appear in your Network Interface line.  Click the IP which will copy it.
+6. Paste the IP in any available web browser. You should have a functioning website.
+
+<br>
+
+
+
+## Create your Work Load VPC
+
+1. Choose [VPCs](https://cloud.ibm.com/vpc-ext/network/vpcs) within VPC Infrastructure Menu
+2. Choose your region that you are completing this lab in from the drop down in the header.
 3. Click the blue "Create +" button.
 
 >***Name:*** vpc-**selected-region**-qbr-demo (ex. vpc-south-qbr-demo)<br>
@@ -78,7 +162,7 @@ The last operation should return to your list of VPCs in the region you have bee
 4. In the bottom right-hand corner, turn on the ‘Public Gateway’ tick box to Attached
 5. Click Attach on modal window.
 
-## Create Virtual Machine in VPC we just created and configured
+## Create Workload Virtual Machine in VPC we just created and configured
 1. If you are no longer on the VPC detail, navigate to your VPC details page using the VPCs menu option.
 2. Scroll down to the subnet section and enter the subnet for zone 1.
 3. While in the VPC window, click the ‘Attached Resources’ tab across top
@@ -133,8 +217,7 @@ Your Instance should be running now.
 
 
 
-# Optional 
-### If that was a breeze, lets increase the avability of our website by adding a second zone and a load balancer.
+ Add a second zone and a load balancer.
 
 ## Navigate to VPC
 1. Click VPC's in the menu 
