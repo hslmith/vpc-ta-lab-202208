@@ -1,4 +1,4 @@
-# VPC Mini Lab
+# VPC Tech Academy Lab
 ### URLS Needed in this Mini Lab
 - [IBM Cloud Portal](http://cloud.ibm.com)
 - [This Lab Repo](https://github.com/hslmith/vpc-mini-lab)
