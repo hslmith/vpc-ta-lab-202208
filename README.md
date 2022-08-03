@@ -74,7 +74,11 @@ A transit "Hub" VPC serves as a centralized point for routing network traffic to
 7. Enter 10.100.200.0/24 in the IP Range field
 8. Change the location to Washingon DC 1
 9. Click Create
-10. Go back to the overview tab, scoll down and click to create a subnet in your shiny new VPC.
+10. Click Create again
+7. Enter 192.168.50.0/24 in the IP Range field
+8. Change the location to Washingon DC 3
+9. Click Create
+10. Go back to the overview tab, scoll down and click to create 2 subnets in your shiny new VPC.
 
 >Location: Washington DC 1
 >Name: sn-vnf-ta-transit
@@ -84,6 +88,46 @@ A transit "Hub" VPC serves as a centralized point for routing network traffic to
 >attach a public gateway for update
 >Click Create Subnet
 >
+>
+>Location: Washington DC 3
+>Name: sn-client-ta-demo
+>Resource Group: Default
+>Virtual Private Cloud: your transit vpc for this lab
+>IP Range Selection: Choose 128 in the Number of adddress drop down (this should create a subnet of 192.168.50.0/25)
+>attach a public gateway for update
+>Click Create Subnet
+>
+>
+# Create Windows Client in transit VPC
+1. You should be at you list of subnets in the region, click the subnet you just created in zone 1
+2. While in the subnet window, click the ‘Attached Resources’ tab across top
+4. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
+	
+	Type: Intel
+	Hosting Type: Public
+	The correct location should be selected but if not, choose the same Location as you VPC that you created above (Zone 3)
+
+	>***Name:*** in-<em>selected region</em>in-ta-client-demo01<br>
+	>***Resource Group:*** Default<br>
+	>***Operating System:*** Windows Server 2022 <br>
+	>***Profile:*** mx2-2x16<br>
+
+	![-](/assets/images/sc-profiles-memory.png)<br>
+	
+	>
+	>***SSH keys:*** tavpclab<br>
+
+
+	<br><br><br>
+	![-](/assets/images/sc-github.png)
+		
+	>Scroll down to Networking Section<br>
+	>Select you VPC you created in earlier step<br>
+	>Double check your parameters<br>
+	>Click ‘Create Virtual Server’<br>
+	
+This will take you back to the ‘Virtual Server’ list and you should see your instance in a starting state.  This will take a couple of minutes.
+
 
 ## Create VNF in transit VPC
 1. You should be at you list of subnets in the region, click the subnet you just created in zone 1
@@ -304,7 +348,7 @@ Your Instance should be running now.
 4. Create Backend Pool
 	
 	>Click Black "Create +" Button<br>
-	>***Name:*** pool-qbr-lab<br>
+	>***Name:*** pool-ta-demo<br>
 	>***Protocol:*** HTTP<br>
 	>***Session Stickiness:*** none<br>
 	>***Proxy Protocol:*** Disabled<br>
@@ -319,7 +363,7 @@ Your Instance should be running now.
 9. Create Front End Listener
 	
 	>Click Black "Create Listener +" Button and configre the following<br>
-	>***Pool:*** pool-qbr-lab<br>
+	>***Pool:*** pool-ta-lab<br>
 	>***Protocol:*** HTTP<br>
 	>***Listener Port:*** 80<br>
 	>Click Create<br>
