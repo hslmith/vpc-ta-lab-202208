@@ -14,11 +14,15 @@ The following multi-zone architecture will be used
 - [This Lab Repo](https://github.com/hslmith/vpc-mini-lab)
 
 
+### Tools Needed for this Lab
+- A SSH clinet (Terminal or Putty)
+
+
 
 ## Login to IBM Cloud Portal
 
 Decide on a Region to create this demo and keep a mental note: US South (Dallas) or US East Washington DC<br>
-I have chosen **Dallas us-south** for this lab 
+I have chosen **Washington DC us-east** for this lab 
 
 
 ## Navigate to VPC Infrastructure in IBM Cloud Portal
