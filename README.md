@@ -63,32 +63,46 @@ A transit "Hub" VPC serves as a centralized point for routing network traffic to
 
 >***Name:*** vpc-**@selected-region**-ta-transit-demo (ex. vpc-us-east-ta-transit-demo)<br>
 >***Resource Group:*** Default<br>
+>Uncheck "Create a default prefix for each zone" box as we will create a small one for our VNF/Firewall<br>
 >All other values and checkbox defaults are ok<br>
 
->Note: you should have three default prefixes and subnets already created for you<br>
 >Click ***Create Virtual Private Cloud***<br><br>
 
+4. Now that your VPC is create, click name in the list to view the details.
+5. In the top right tile, click "Manage address prefixes"
+6. Click Create
+7. Enter 10.100.200.0/24 in the IP Range field
+8. Change the location to Washingon DC 1
+9. Click Create
+10. Go back to the overview tab, scoll down and click to create a subnet in your shiny new VPC.
+
+>Location: Washington DC 1
+>Name: sn-vnf-ta-transit
+>Resource Group: Default
+>Virtual Private Cloud: your transit vpc for this lab
+>IP Range Selection: Choose 128 in the Number of adddress drop down (this should create a subnet of 10.100.200.0/25)
+>attach a public gateway for update
+>Click Create Subnet
+>
 
 ## Create VNF in transit VPC
-1. If you are no longer on the VPC detail, navigate to your VPC details page using the VPCs menu option.
-2. Scroll down to the subnet section and enter the subnet for zone 1.
-3. While in the VPC window, click the ‘Attached Resources’ tab across top
+1. You should be at you list of subnets in the region, click the subnet you just created in zone 1
+2. While in the subnet window, click the ‘Attached Resources’ tab across top
 4. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
 	
 	Type: Intel
 	Hosting Type: Public
 	The correct location should be selected but if not, choose the same Location as you VPC that you created above
 
-	>***Name:*** in-<em>selected region</em>-qbr-demo01<br>
+	>***Name:*** in-<em>selected region</em>-ta-vnf-demo01<br>
 	>***Resource Group:*** Default<br>
 	>***Operating System:*** CeentOS-7<br>
-	>***Profile:*** Click 'view all profiles', select memory and choose 'mx2-2x16'<br>
+	>***Profile:*** bx2-2x8<br>
 
 	![-](/assets/images/sc-profiles-memory.png)<br>
 	
 	>
-	>***SSH keys:*** minilab<br>
-	>***User Data:*** Copy and paste the the [user_data](instance-user-data) file provided in github
+	>***SSH keys:*** tavpclab<br>
 
 
 	<br><br><br>
@@ -96,6 +110,7 @@ A transit "Hub" VPC serves as a centralized point for routing network traffic to
 		
 	>Scroll down to Networking Section<br>
 	>Select you VPC you created in earlier step<br>
+	>Edit the interface and enable "Allow IP Spoofing"
 	>Double check your parameters<br>
 	>Click ‘Create Virtual Server’<br>
 	
