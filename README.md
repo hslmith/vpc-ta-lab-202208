@@ -43,11 +43,12 @@ Copy the [public key](pubkey_rsa) from the github repo.
 3. Click blue “Create +” 
 4. SSH Keys are stored at the regional level. Confirm you have the correct region selected. Make sure it is set to the region you started with.
 	
->Name: minilab<br>
+>Name: tavpclab<br>
 >Resource Group: Default<br>
 >Public Key: Paste the public key you either created in the optional section above(id_rsa.pub) or copy and paste (pubkey_rsa) from github<br>
 ![-](/assets/images/sshkey-create.png)
->Click Create<br>
+
+Click Create<br>
 
 
 
@@ -60,7 +61,7 @@ A transit "Hub" VPC serves as a centralized point for routing network traffic to
 2. Choose your region that you want to complete this lab in from the drop down in the header.
 3. Click the blue "Create +" button.
 
->***Name:*** vpc-**selected-region**-qbr-demo (ex. vpc-south-qbr-demo)<br>
+>***Name:*** vpc-**@selected-region**-ta-transit-demo (ex. vpc-us-east-ta-transit-demo)<br>
 >***Resource Group:*** Default<br>
 >All other values and checkbox defaults are ok<br>
 
