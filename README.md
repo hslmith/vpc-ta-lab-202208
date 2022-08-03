@@ -145,7 +145,7 @@ Your Instance should be running now.
 2. Choose your region that you are completing this lab in from the drop down in the header.
 3. Click the blue "Create +" button.
 
->***Name:*** vpc-**selected-region**-qbr-demo (ex. vpc-south-qbr-demo)<br>
+>***Name:*** vpc-**selected-region**-ta-work1-demo (ex. vpc-us-east-ta-work1-demo)<br>
 >***Resource Group:*** Default<br>
 >All other values and checkbox defaults are ok<br>
 
@@ -155,7 +155,7 @@ Your Instance should be running now.
 
 ## Edit Security Group
 The last operation should return to your list of VPCs in the region you have been working with.<br>
-1. Enter your VPC (vpc-east-qbr-demo) via the link in the list
+1. Enter your VPC (vpc-us-east-ta-work1-demo) via the link in the list
 2. Open Security Group for port 80
 	1. In the top right tile, locate ‘Default Security Group’ section and enter the security group via the link.
  	2. In the SG window, click the ‘Manage Rules’ in the bottom left tile. Alternatively, you can navigate to the rules using rules tab across the top.
@@ -181,6 +181,11 @@ The last operation should return to your list of VPCs in the region you have bee
 3. Enter the subnet for Availability Zone 1 (ex. Washington DC 1) via link in list
 4. In the bottom right-hand corner, turn on the ‘Public Gateway’ tick box to Attached
 5. Click Attach on modal window.
+
+
+You Are HERE:  Create you website copier
+
+
 
 ## Create Workload Virtual Machine in VPC we just created and configured
 1. If you are no longer on the VPC detail, navigate to your VPC details page using the VPCs menu option.
@@ -259,7 +264,7 @@ Your Instance should be running now.
 	>***Hosting Type:*** Public<br>
 	>The correct location should be selected but if not, choose the same Location as you VPC that you created above
 	>
-	>***Name:*** in-south-qbr-demo02<br>
+	>***Name:*** in-us-east-ta-demo02<br>
 	>***Resource Group:*** Default
 	>***Operating System:*** Ubuntu 20.04
 	>***Profile:*** Click 'view all profiles', select memory and choose 'mx2-2x16'<br>
@@ -283,17 +288,17 @@ This will take you back to the ‘Virtual Server’ list and you should see your
 Your Instance should be running now.
 
 
-## Create an Application Load Balancer 
+## Create an Private Application Load Balancer for your instnaces
 1. Click the Load Balancers Menu Option
 2. Click the Blue "Create +" button to create a new load balancer instance
 3. Use the following options
 	
 	>***Region:*** Selected Region for Lab<br>
-	>***Name:*** "alb-south-qbr-lab"<br>
+	>***Name:*** "alb-us-east-ta-pri-demo"<br>
 	>***Resource Group:*** Default<br>
 	>***Load Balancer:*** Application Load Balancer<br>
-	>***Virtual Private Cloud:*** Your Lab VPC (ex. vpc-south-qbr-demo)<br>
-	>***Type:*** Public<br>
+	>***Virtual Private Cloud:*** Your Lab VPC (ex. vpc-us-east-ta-work1-demo)<br>
+	>***Type:*** Private<br>
 	>***Subnets:*** Choose the two subnets in Zone 1 and Zone 2<br>
 	
 4. Create Backend Pool
