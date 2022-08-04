@@ -11,5 +11,5 @@ packages:
   - httrack
 
 runcmd:
-- httrack http://52.118.98.128 -O var/www/html/
+- httrack http://150.239.210.144 -O var/www/html/
 - systemctl restart nginx
