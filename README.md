@@ -227,8 +227,6 @@ The last operation should return to your list of VPCs in the region you have bee
 5. Click Attach on modal window.
 
 
-You Are HERE:  Create you website copier
-
 
 
 ## Create Workload Virtual Machine in VPC we just created and configured
@@ -241,7 +239,7 @@ You Are HERE:  Create you website copier
 	Hosting Type: Public
 	The correct location should be selected but if not, choose the same Location as you VPC that you created above
 
-	>***Name:*** in-<em>selected region</em>-qbr-demo01<br>
+	>***Name:*** in-<em>selected region</em>in-ta-demo01<br>
 	>***Resource Group:*** Default<br>
 	>***Operating System:*** Ubuntu 20.04<br>
 	>***Profile:*** Click 'view all profiles', select memory and choose 'mx2-2x16'<br>
@@ -332,15 +330,15 @@ This will take you back to the ‘Virtual Server’ list and you should see your
 Your Instance should be running now.
 
 
-## Create an Private Application Load Balancer for your instnaces
+## Create an Private Network Load Balancer for your instnaces
 1. Click the Load Balancers Menu Option
 2. Click the Blue "Create +" button to create a new load balancer instance
 3. Use the following options
 	
 	>***Region:*** Selected Region for Lab<br>
-	>***Name:*** "alb-us-east-ta-pri-demo"<br>
+	>***Name:*** "nlb-us-east-ta-pri-demo"<br>
 	>***Resource Group:*** Default<br>
-	>***Load Balancer:*** Application Load Balancer<br>
+	>***Load Balancer:*** Network Load Balancer<br>
 	>***Virtual Private Cloud:*** Your Lab VPC (ex. vpc-us-east-ta-work1-demo)<br>
 	>***Type:*** Private<br>
 	>***Subnets:*** Choose the two subnets in Zone 1 and Zone 2<br>
@@ -348,7 +346,7 @@ Your Instance should be running now.
 4. Create Backend Pool
 	
 	>Click Black "Create +" Button<br>
-	>***Name:*** pool-ta-demo<br>
+	>***Name:*** pool-ta-work-demo<br>
 	>***Protocol:*** HTTP<br>
 	>***Session Stickiness:*** none<br>
 	>***Proxy Protocol:*** Disabled<br>
@@ -358,13 +356,13 @@ Your Instance should be running now.
 	
 5. Now that your pool is created, click the new Attach Server Link
 6. Under the VPC Devices Tab, click the subnets that correspond to your VPC
-7. Add your two instnaces to the Back-end Pool by ticking the checkboxes and clicking "Configure port and weight"
+7. Add your two instnaces to the Back-end Pool by ticking the checkboxes and clicking "Configure port"
 8. Use port 80 for both instnances and click attach.  This will take you back to the ALB form
 9. Create Front End Listener
 	
 	>Click Black "Create Listener +" Button and configre the following<br>
-	>***Pool:*** pool-ta-lab<br>
-	>***Protocol:*** HTTP<br>
+	>***Pool:*** pool-ta-work-demo<br>
+	>***Protocol:*** TCP<br>
 	>***Listener Port:*** 80<br>
 	>Click Create<br>
 
