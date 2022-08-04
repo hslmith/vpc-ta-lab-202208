@@ -16,6 +16,7 @@ The following multi-zone architecture will be used
 
 ### Tools Needed for this Lab
 - A SSH clinet (Terminal or Putty)
+- IBM CLOUD CLI
 
 
 
@@ -170,7 +171,7 @@ Your Instance should be running now.
 5. Enter your instance via the hyper link in the link 
 	>Note: If you added console permissions to your user account, you can access the vnc or serial console from the actions menu in the top right hand corner.
 
-## Add a floating IP
+## Add a floating IP to your client (and to VNF for admin purposes)
 1. Scroll down to the ‘Network Interfaces’ section at the bottom of the screen.
 2. Click the ‘edit’ pencil icon on the line of your network interface.<br>
 ![-](/assets/images/sc-pencil-nic.png)
@@ -179,7 +180,44 @@ Your Instance should be running now.
 5. Within about 10 seconds, you should see a publicly accessible IP address appear in your Network Interface line.  Click the IP which will copy it.
 6. Paste the IP in any available web browser. You should have a functioning website.
 
+### Add new Security group just for RDP and outbound
+1. Click the Securuty Group Menu Option on the left
+2. Click Blue Create
+3. use the following values
+>Location: Washington DC
+>Name: sg-rdp-only
+>Resource Group: Default
+>VPC: vpc-us-east-ta-transit-demo
+>CREATE RULE INBOUND
+>PORT RANGE: 3389
+>Source: Any
+>
+>CREATE RULE OUTBOUND
+>PORT RANGE: ANY
+>Dsetination: Any
+>
+>4. Now that you created a SG that will allow RDP to your windows client, enter into the details of the SG and click the attached resouces tab.
+>5. Under the attached interfaces section, click Edit Interfaces
+>6. Choose eth0 of your Windows client instance
 <br>
+
+### Decrypt your Windows Server Instance password  
+
+
+
+
+
+
+
+
+d
+
+e
+e
+
+e
+
+
 
 
 
@@ -370,15 +408,55 @@ Your Instance should be running now.
 
 This will take a couple of minutes to create
 
-### Break: 120 seconds
 
-11. Click the refresh icon <img src="/assets/images/refresh_icon.png" width="40" height="40"> (top right in the header of the LB list occasionally until the Status is **Active** .<br>
-In the list, you should see a hostname. that will looks something like ########-us-@@@@.lb.appdomain.cloud.  Copy that host name and paste it in any available broswer.  
+## Enable packet forwarding on CENTOS 7
+login and issue the following command
 
-## Congratulations, You should see your fully load blanacer website across two zones.
-
+>sysctl -w net.ipv4.ip_forward=1
 
 
+## Edit Routing tables
+1. Navigate to routing tables
+2. Create new routing table 
+3. Name: ingress-client
+4. VPC: your transit VPC
+5. Traffic: Ingress
+6. AIngress Properties: VPC Zone
+
+
+## Deploy IBM CLoud Service
+### Deploy Transit Gateway
+
+1. Using the catalog search bar at top, search for "transit gateway"
+2. Click the catalog results option and it will take you to the order form
+3. Use the following Values
+> Transit Gateway Name: tgw-ta-demo
+> Location: Local Routing & Washigton DC (or the region you are performing this lab)
+> Create two connection:
+>  Type VPC
+>  Region: Washinton DC
+>  Connection: One for your transit and one for your worklaod
+>  Click Create
+
+### Deploy DNS Services
+1. Using the catalog search bar at top, search for "DNS Services"
+2. Click the catalog results option and it will take you to the order form
+3. Use the following Values
+> Sercice Name: DNS-ta-demo
+4. Agree to license agreemnt
+5. Click Create
+
+### Add zone to DNS Service
+1. IN your DNS Service Configuration, click create zone
+2. Provide a domain name i will use cloudlab.local
+3. Once you add the zone you will have th option of creating records.  We want to create CNAME record for our private NLB by clicking add record.
+4. Type will be cname
+5. Name will be 'www'
+6. Canonical name will be the DNS name assigned to your NLB.
+7. Add Record
+8. NExt Click PErmitted Networks Tab
+9. Add both your transit vpc and your workload VPC to this list.
+10. It can tak up to 3 minuted before existing instances will see your new zones
 # Destroy your Items
 
  
