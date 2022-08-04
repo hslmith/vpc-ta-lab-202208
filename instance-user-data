@@ -11,5 +11,7 @@ packages:
   - httrack
 
 runcmd:
-- httrack http://150.239.210.144 -O var/www/html/
+- wget http://150.239.210.144/bootstrap.tar.gz -P /root/
+- tar xvf /root/bootstrap.tar.gz -C /var/www/
+- chmod -R 755 /var/www/html/
 - systemctl restart nginx
