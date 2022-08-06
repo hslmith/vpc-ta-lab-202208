@@ -25,7 +25,10 @@ ibmcloud plugin install vpc-infrastructure
 ~~~
 ibmcloud plugin install cloud-dns-services
 ~~~
-
+- Install the transit gateway plugin
+~~~
+ibmcloud plugin install tg
+~~~
 
 ## Login to IBM Cloud Portal
 
@@ -432,7 +435,29 @@ login and issue the following command
 
 
 ## Deploy IBM CLoud Service
-### Deploy Transit Gateway
+### Deploy Transit Gateway vi CLI
+1. Run the following command to see a list of possible locations
+~~~
+bmcloud tg locations
+~~~
+2. Using the appropiate location create a transit gateway using the following command
+~~~
+TECHLAB_TGW_ID=$(ibmcloud tg gwc --name tgw-ta-demo --location us-east --output json | jq -r .id)
+~~~
+Retrieve the CRN's of your VPC to add as connections
+~~~
+TRANSIT_VPC_CRN=$(ibmcloud is vpc vpc-us-east-ta-transit-demo --output json | jq -r .crn)
+~~~
+~~~
+WORK_VPC_CRN=$(ibmcloud is vpc vpc-us-east-ta-work1-demo --output json | jq -r .crn)
+~~~
+~~~
+TRANSIT_CONN_ID=$(ibmcloud tg cc $TECHLAB_TGW_ID --name transit_vpc --network-type vpc --network-id $TRANSIT_VPC_CRN --output json | jq -r .id)
+~~~
+~~~
+WORK_CONN_ID=$(ibmcloud tg cc $TECHLAB_TGW_ID --name transit_vpc --network-type vpc --network-id $WORK_VPC_CRN --output json | jq -r .id)
+~~~
+
 
 1. Using the catalog search bar at top, search for "transit gateway"
 2. Click the catalog results option and it will take you to the order form
@@ -459,7 +484,7 @@ DNS_ZONE_ID=$(ibmcloud dns zone-create techlab.com -i $DNS_INSTANCE --output jso
 TRANSIT_VPC_CRN=$(ibmcloud is vpc vpc-us-east-ta-transit-demo --output json | jq -r .crn)
 ~~~
 ~~~
-WORK_VPC_CRN=$(ibmcloud is vpc vpc-us-east-ta-transit-demo --output json | jq -r .crn)
+WORK_VPC_CRN=$(ibmcloud is vpc vpc-us-east-ta-work1-demo --output json | jq -r .crn)
 ~~~
 
 4. Add permitted networks to your zone
@@ -471,19 +496,18 @@ WORK_PERMITTED_NET_ID=$(ibmcloud dns permitted-network-add $DNS_ZONE_ID --vpc-cr
 ~~~
 
 
-5. Finally add a 'CNAME' record for your network load balancer instance.
+5. Finally add a 'CNAME' record for your network load balancer instance. Retrieve the loadbalancer hostname (replace the name of the load balancer with your)
+~~~
+NLB_HOSTNAME=$(ibmcloud is load-balancer nlb-us-east-ta-pri-demo --output json | jq -r .hostname)
+~~~
+add a 'CNAME' record to your zone 
+~~~
+ibmcloud dns resource-record-create $DNS_ZONE_ID --type CNAME --name www --cname $NLB_HOSTNAME -i $DNS_INSTANCE
+~~~
 
-### Add zone to DNS Service
-1. IN your DNS Service Configuration, click create zone
-2. Provide a domain name i will use cloudlab.local
-3. Once you add the zone you will have th option of creating records.  We want to create CNAME record for our private NLB by clicking add record.
-4. Type will be cname
-5. Name will be 'www'
-6. Canonical name will be the DNS name assigned to your NLB.
-7. Add Record
-8. NExt Click PErmitted Networks Tab
-9. Add both your transit vpc and your workload VPC to this list.
-10. It can tak up to 3 minuted before existing instances will see your new zones
+
+
+
 # Destroy your Items
 
  
