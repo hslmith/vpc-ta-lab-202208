@@ -21,7 +21,7 @@ The following multi-zone architecture will be used
 ~~~
 ibmcloud plugin install vpc-infrastructure
 ~~~
-- Install the DS Services Plugin
+- Install the DNS Services Plugin
 ~~~
 ibmcloud plugin install cloud-dns-services
 ~~~
@@ -445,13 +445,33 @@ login and issue the following command
 >  Connection: One for your transit and one for your worklaod
 >  Click Create
 
-### Deploy DNS Services
-1. Using the catalog search bar at top, search for "DNS Services"
-2. Click the catalog results option and it will take you to the order form
-3. Use the following Values
-> Sercice Name: DNS-ta-demo
-4. Agree to license agreemnt
-5. Click Create
+### Deploy DNS Services using CLI
+1. Use the CLI to create a dns service instance by the name of 'dns-tech-lab' using the standard plan ID and assigning it to the default resource group.
+~~~
+DNS_INSTANCE=$(ibmcloud dns instance-create dns-tech-lab 2c8fa097-d7c2-4df2-b53e-2efb7874cdf7 --resource-group Default --output json | jq -r .guid)
+~~~
+2. Create a new zone in your newly created instnace 
+~~~
+DNS_ZONE_ID=$(ibmcloud dns zone-create techlab.com -i $DNS_INSTANCE --output json | jq -r .id)
+~~~
+3. to Add Permitted Netowrks to your zone.  We first need to find the crn of your exising VPC's. Run the following command and replace the name of your vpc with your vpc.
+~~~
+TRANSIT_VPC_CRN=$(ibmcloud is vpc vpc-us-east-ta-transit-demo --output json | jq -r .crn)
+~~~
+~~~
+WORK_VPC_CRN=$(ibmcloud is vpc vpc-us-east-ta-transit-demo --output json | jq -r .crn)
+~~~
+
+4. Add permitted networks to your zone
+~~~
+TRANSIT_PERMITTED_NET_ID=$(ibmcloud dns permitted-network-add $DNS_ZONE_ID --vpc-crn $TRANSIT_VPC_CRN --type vpc -i $DNS_INSTANCE --output json)
+~~~
+~~~
+WORK_PERMITTED_NET_ID=$(ibmcloud dns permitted-network-add $DNS_ZONE_ID --vpc-crn $WORK_VPC_CRN --type vpc -i $DNS_INSTANCE --output json)
+~~~
+
+
+5. Finally add a 'CNAME' record for your network load balancer instance.
 
 ### Add zone to DNS Service
 1. IN your DNS Service Configuration, click create zone
