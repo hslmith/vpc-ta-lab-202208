@@ -16,6 +16,7 @@ The following multi-zone architecture will be used
 
 ### Tools Needed for this Lab
 - A SSH clinet (Terminal or Putty)
+- [Install jq](https://stedolan.github.io/jq/download/) (a lightweight json command line processor)
 - [Install the IBM CLOUD CLI](https://cloud.ibm.com/docs/cli?topic=cli-install-ibmcloud-cli#install-ibmcloud-cli)
 - Install the VPC infrastrcture Plugin
 ~~~
@@ -420,10 +421,10 @@ This will take a couple of minutes to create
 
 
 ## Enable packet forwarding on CENTOS 7
-login and issue the following command
-
->sysctl -w net.ipv4.ip_forward=1
-
+login as root using the ssh you added to the portal above and issue the following command
+~~~
+sysctl -w net.ipv4.ip_forward=1
+~~~
 
 ## Edit Routing tables
 1. Navigate to routing tables
@@ -455,20 +456,14 @@ WORK_VPC_CRN=$(ibmcloud is vpc vpc-us-east-ta-work1-demo --output json | jq -r .
 TRANSIT_CONN_ID=$(ibmcloud tg cc $TECHLAB_TGW_ID --name transit_vpc --network-type vpc --network-id $TRANSIT_VPC_CRN --output json | jq -r .id)
 ~~~
 ~~~
-WORK_CONN_ID=$(ibmcloud tg cc $TECHLAB_TGW_ID --name transit_vpc --network-type vpc --network-id $WORK_VPC_CRN --output json | jq -r .id)
+WORK_CONN_ID=$(ibmcloud tg cc $TECHLAB_TGW_ID --name work_vpc --network-type vpc --network-id $WORK_VPC_CRN --output json | jq -r .id)
 ~~~
 
+Verify you have a gateway deployed with connection to both of your VPC's.  Status should say 'attached'
+~~~
+ibmcloud tg connections $TECHLAB_TGW_ID
+~~~
 
-1. Using the catalog search bar at top, search for "transit gateway"
-2. Click the catalog results option and it will take you to the order form
-3. Use the following Values
-> Transit Gateway Name: tgw-ta-demo
-> Location: Local Routing & Washigton DC (or the region you are performing this lab)
-> Create two connection:
->  Type VPC
->  Region: Washinton DC
->  Connection: One for your transit and one for your worklaod
->  Click Create
 
 ### Deploy DNS Services using CLI
 1. Use the CLI to create a dns service instance by the name of 'dns-tech-lab' using the standard plan ID and assigning it to the default resource group.
