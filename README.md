@@ -1,4 +1,21 @@
 # VPC Tech Academy Lab
+This lab will walk you through setting up loadblanced cluster of webservers in a private (workload) VPC that can only be accessed via a transit VPC and basic VNF firewall. This lab will employ a mix of IBM CLoud Portal and CLI usage to expose you to both.
+You will deploy the following services by the end of this lab.
+
+- Multiple VPC's
+- VSI Virtual Machines
+- Custom Subnets
+- Custom Routes
+- DNS Services
+- Transit Gateway
+- Network Load Balancer
+- Floating IP
+- Public Gateway
+
+The CLI portion of this lab uses session variables that may not persist if you logout or close your terminal.
+
+- Check for user permissions. Be sure that your user account has sufficient permissions to create and manage IBM Cloud VPC resources.
+- 
 
 The following multi-zone architecture will be used
 
@@ -44,11 +61,12 @@ I have chosen **Washington DC us-east** for this lab
 4. Choose **Overview** within the **VPC Infrastructure** menu. This will take you into the VPC landing page.
 
 
-## Create a SSH Key in the IBM Cloud Portal
->Before you can add a key in the IBM Cloud console, you must make your SSH key available. Your SSH key must be an RSA key with a key size of either 2048 bits or 4096 bits.
+## Add your SSH Key in the IBM Cloud Portal
+Before you can add a key in the IBM Cloud console, you must make your SSH key available. Your SSH key must be an RSA key with a key size of either 2048 bits or 4096 bits.
+Yyou can either [create a new SSH key](https://cloud.ibm.com/docs/vpc?topic=vpc-ssh-keys#locating-ssh-keys), use an existing SSH key on your machine or use the one provided in the github repo.
 
 
-Copy the [public key](pubkey_rsa) from the github repo.
+if you choose to use the provided ssh key, copy the [public key](pubkey_rsa) from the github repo.
 
 1. Expand the Compute Menu and select ‘SSH Keys’
 2. Choose your region that you want to complete this lab in from the drop down in the header.
@@ -207,28 +225,29 @@ Your Instance should be running now.
 >PORT RANGE: ANY
 >Dsetination: Any
 >
->4. Now that you created a SG that will allow RDP to your windows client, enter into the details of the SG and click the attached resouces tab.
+>4. Now that you created a SG that will allow RDP to your windows client, enter the details of the SG and click the attached resouces tab.
 >5. Under the attached interfaces section, click Edit Interfaces
 >6. Choose eth0 of your Windows client instance
 <br>
 
 ### Decrypt your Windows Server Instance password  
+1. Locatace and take note of your instnace id using the IBM CLOUD CLI.  Start by logging in.
+~~~
+ibmcloud login --sso
+~~~
+2. Target the correct region where you are building this lab
+~~~
+ibmcloud target -r us-east
 
-
-
-
-
-
-
-
-d
-
-e
-e
-
-e
-
-
+~~~
+2. Run the following which will list all instances in the target region
+~~~
+ibmcloud is instances
+~~~
+2. Using the instnace id for your winodws instance from the above output, run the following command replacing 'INSTANCE_ID with the ID found in the previous list' and the path to you private key after the '@'.  The output should provide you with a password that you can now use to login to you windows instance via RDP.
+~~~
+ibmcloud is instance-initialization-values INSTANCE_ID --private-key @~/.ssh/id_rsa
+~~~
 
 
 
