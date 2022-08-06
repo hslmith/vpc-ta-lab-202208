@@ -16,7 +16,11 @@ The following multi-zone architecture will be used
 
 ### Tools Needed for this Lab
 - A SSH clinet (Terminal or Putty)
-- IBM CLOUD CLI
+- [Install the IBM CLOUD CLI](https://cloud.ibm.com/docs/cli?topic=cli-install-ibmcloud-cli#install-ibmcloud-cli)
+- Install the VPC infrastrcture Plugin
+- >ibmcloud plugin install vpc-infrastructure
+- Install the DS Services Plugin
+- >ibmcloud plugin install cloud-dns-services
 
 
 
