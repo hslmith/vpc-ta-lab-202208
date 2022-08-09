@@ -19,8 +19,7 @@ The CLI portion of this lab uses session variables that may not persist if you l
 
 The following multi-zone architecture will be used
 
-99999999mage
-
+![-](/assets/images/TA-LAB-TransitDemo.png)<br>
 
 
 
