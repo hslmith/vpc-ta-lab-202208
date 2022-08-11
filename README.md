@@ -1,5 +1,5 @@
 # VPC Tech Academy Lab
-This lab will walk you through setting up loadblanced cluster of webservers in a private (workload) VPC that can only be accessed via a transit VPC and basic VNF firewall. This lab will employ a mix of IBM CLoud Portal and CLI usage to expose you to both.
+This lab will walk you through setting up load balanced cluster of webservers in a private (workload) VPC that can only be accessed via a transit VPC and basic VNF firewall. This lab will employ a mix of IBM Cloud Portal and CLI usage to expose you to both.
 You will deploy the following services by the end of this lab.
 
 - Multiple VPC's
@@ -15,7 +15,6 @@ You will deploy the following services by the end of this lab.
 The CLI portion of this lab uses session variables that may not persist if you logout or close your terminal.
 
 - Check for user permissions. Be sure that your user account has sufficient permissions to create and manage IBM Cloud VPC resources.
-- 
 
 The following multi-zone architecture will be used
 
