@@ -1,5 +1,5 @@
 # VPC Tech Academy Lab
-This lab will walk you through setting up load balanced cluster of webservers in a private (workload) VPC that can only be accessed via a transit VPC and basic VNF firewall. This lab will employ a mix of IBM Cloud Portal and CLI usage to expose you to both.
+This lab will walk you through setting up load balanced cluster of web servers in a private (workload) VPC that can only be accessed via a transit VPC and basic VNF firewall. This lab will employ a mix of IBM Cloud Portal and CLI usage to expose you to both.
 You will deploy the following services by the end of this lab.
 
 - Multiple VPC's
@@ -33,7 +33,7 @@ The following multi-zone architecture will be used
 - A SSH clinet (Terminal or Putty)
 - [Install jq](https://stedolan.github.io/jq/download/) (a lightweight json command line processor)
 - [Install the IBM CLOUD CLI](https://cloud.ibm.com/docs/cli?topic=cli-install-ibmcloud-cli#install-ibmcloud-cli)
-- Install the VPC infrastrcture Plugin
+- Install the VPC infrastructure Plugin
 ~~~
 ibmcloud plugin install vpc-infrastructure
 ~~~
@@ -100,13 +100,13 @@ A transit "Hub" VPC serves as a centralized point for routing network traffic to
 5. In the top right tile, click "Manage address prefixes"
 6. Click Create
 7. Enter 10.100.200.0/24 in the IP Range field
-8. Change the location to Washingon DC 1
+8. Change the location to Washington DC 1
 9. Click Create
 10. Click Create again
 7. Enter 192.168.50.0/24 in the IP Range field
-8. Change the location to Washingon DC 3
+8. Change the location to Washington DC 3
 9. Click Create
-10. Go back to the overview tab, scoll down and click to create 2 subnets in your shiny new VPC.
+10. Go back to the overview tab, scroll down and click to create 2 subnets in your shiny new VPC.
 
 >Location: Washington DC 1
 >Name: sn-vnf-ta-transit
@@ -208,7 +208,7 @@ Your Instance should be running now.
 6. Paste the IP in any available web browser. You should have a functioning website.
 
 ### Add new Security group just for RDP and outbound
-1. Click the Securuty Group Menu Option on the left
+1. Click the Security Group Menu Option on the left
 2. Click Blue Create
 3. use the following values
 >Location: Washington DC
@@ -223,13 +223,13 @@ Your Instance should be running now.
 >PORT RANGE: ANY
 >Dsetination: Any
 >
->4. Now that you created a SG that will allow RDP to your windows client, enter the details of the SG and click the attached resouces tab.
+>4. Now that you created a SG that will allow RDP to your windows client, enter the details of the SG and click the attached resources tab.
 >5. Under the attached interfaces section, click Edit Interfaces
 >6. Choose eth0 of your Windows client instance
 <br>
 
 ### Decrypt your Windows Server Instance password  
-1. Locatace and take note of your instnace id using the IBM CLOUD CLI.  Start by logging in.
+1. Locate and take note of your instance id using the IBM CLOUD CLI.  Start by logging in.
 ~~~
 ibmcloud login --sso
 ~~~
@@ -242,7 +242,7 @@ ibmcloud target -r us-east
 ~~~
 ibmcloud is instances
 ~~~
-2. Using the instnace id for your winodws instance from the above output, run the following command replacing 'INSTANCE_ID with the ID found in the previous list' and the path to you private key after the '@'.  The output should provide you with a password that you can now use to login to you windows instance via RDP.
+2. Using the instance id for your windows instance from the above output, run the following command replacing 'INSTANCE_ID with the ID found in the previous list' and the path to you private key after the '@'.  The output should provide you with a password that you can now use to login to you windows instance via RDP.
 ~~~
 ibmcloud is instance-initialization-values INSTANCE_ID --private-key @~/.ssh/id_rsa
 ~~~
@@ -313,8 +313,8 @@ The last operation should return to your list of VPCs in the region you have bee
 	![-](/assets/images/sc-profiles-memory.png)<br>
 	
 	>
-	>***SSH keys:*** minilab<br>
-	>***User Data:*** Copy and paste the the [user_data](instance-user-data) file provided in github
+	>***SSH keys:*** tavpclab<br>
+	>***User Data:*** Copy and paste the [user_data](instance-user-data) file provided in github
 
 
 	<br><br><br>
@@ -376,7 +376,7 @@ Your Instance should be running now.
 	>***Resource Group:*** Default
 	>***Operating System:*** Ubuntu 20.04
 	>***Profile:*** Click 'view all profiles', select memory and choose 'mx2-2x16'<br>
-	>***SSH keys:*** minilab<br>
+	>***SSH keys:*** tavpclab<br>
 	>***User Data:*** Copy and paste the the [user_data](instance-user-data) file provided in github<br><br>
 	>	
 	>Scroll down to Networking Section<br>
@@ -396,7 +396,7 @@ This will take you back to the ‘Virtual Server’ list and you should see your
 Your Instance should be running now.
 
 
-## Create an Private Network Load Balancer for your instnaces
+## Create an Private Network Load Balancer for your instances
 1. Click the Load Balancers Menu Option
 2. Click the Blue "Create +" button to create a new load balancer instance
 3. Use the following options
@@ -422,8 +422,8 @@ Your Instance should be running now.
 	
 5. Now that your pool is created, click the new Attach Server Link
 6. Under the VPC Devices Tab, click the subnets that correspond to your VPC
-7. Add your two instnaces to the Back-end Pool by ticking the checkboxes and clicking "Configure port"
-8. Use port 80 for both instnances and click attach.  This will take you back to the ALB form
+7. Add your two instances to the Back-end Pool by ticking the check boxes and clicking "Configure port"
+8. Use port 80 for both instances and click attach.  This will take you back to the ALB form
 9. Create Front End Listener
 	
 	>Click Black "Create Listener +" Button and configre the following<br>
