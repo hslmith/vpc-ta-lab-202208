@@ -8,7 +8,6 @@ packages:
   - unzip
   - nginx-full
   - curl
-  - httrack
 
 runcmd:
 - rm /var/www/html/index.nginx-debian.html
