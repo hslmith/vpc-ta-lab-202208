@@ -153,7 +153,10 @@ This will take you back to the ‘Virtual Server’ list and you should see your
 
 
 ## Create VNF virtual machine in transit VPC
-1. You should be at you list of subnets in the region, click the subnet you just created in zone 1
+1. You should be at you list of virtual machines in the region.
+2. In this list, you should also see your transit next to the instance you just created, click into the VPC.
+3. While in the VPC windows, scroll down to 'Subnets in this VPC' section.
+4. Click the subnet you created for zone 1
 2. While in the subnet window, click the ‘Attached Resources’ tab across top
 4. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
 	
