@@ -288,7 +288,7 @@ The last operation should return to your list of VPCs in the region you have bee
 
 ## Add Public Gateway to VPC subnet
 1. Navigate back to your VPC.
-	1. Expand ‘Network Section’
+	1. Expand ‘Network Section’ in left menu (If collapsed)
 	2. Choose VPC’s
 	3. Enter your VPC via the HyperLink
 2. Scroll down to the ‘subnets’ section
@@ -325,7 +325,7 @@ The last operation should return to your list of VPCs in the region you have bee
 	![-](/assets/images/sc-github.png)
 		
 	>Scroll down to Networking Section<br>
-	>Select you VPC you created in earlier step<br>
+	>Select your workload VPC you created in earlier step ex. vpc-us-east-ta-work1-demo<br>
 	>Double check your parameters<br>
 	>Click ‘Create Virtual Server’<br>
 	
@@ -338,21 +338,7 @@ This will take you back to the ‘Virtual Server’ list and you should see your
 
 4. Click the refresh icon <img src="/assets/images/refresh_icon.png" width="40" height="40"> (top right in the header of the instance list.<br>
 Your Instance should be running now.
-5. Enter your instance via the hyper link in the link 
-	>Note: If you added console permissions to your user account, you can access the vnc or serial console from the actions menu in the top right hand corner.
-
-## Add a floating IP
-1. Scroll down to the ‘Network Interfaces’ section at the bottom of the screen.
-2. Click the ‘edit’ pencil icon on the line of your network interface.<br>
-![-](/assets/images/sc-pencil-nic.png)
-3. In the slide out window you will see a option for ‘Floating IP Address’.  In that drop down, select ‘Reserve a New Floating IP’
-4. Click ‘Save’
-5. Within about 10 seconds, you should see a publicly accessible IP address appear in your Network Interface line.  Click the IP which will copy it.
-6. Paste the IP in any available web browser. You should have a functioning website.
-
 <br>
-
-
 
  Add a second zone and a load balancer.
 
