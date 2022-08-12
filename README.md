@@ -442,7 +442,7 @@ sysctl -w net.ipv4.ip_forward=1
 ><br>
 >Zone: Zone 3
 >Name: vnf-egress<br>
->Destination CIDR: <br>
+>Destination CIDR: 10.241.0.0/16<br>
 >Action: Deliver<br>
 >Next Hop: The Private IP of your VNF (Most likely 10.100.200.4)<br>
 ><br>
