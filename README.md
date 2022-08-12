@@ -397,7 +397,7 @@ Your Instance should be running now.
 	>***Load Balancer:*** Network Load Balancer<br>
 	>***Virtual Private Cloud:*** Your Lab VPC (ex. vpc-us-east-ta-work1-demo)<br>
 	>***Type:*** Private<br>
-	>***Subnets:*** Choose the two subnets in Zone 1 and Zone 2<br>
+	>***Subnets:*** Choose Zone 1<br>
 	
 4. Create Backend Pool
 	
