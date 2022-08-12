@@ -106,23 +106,23 @@ A transit "Hub" VPC serves as a centralized point for routing network traffic to
 9. Click Create
 10. Go back to the overview tab, scroll down and click to create 2 subnets in your shiny new VPC.
 
->Location: Washington DC 1
->Name: sn-vnf-ta-transit
->Resource Group: Default
->Virtual Private Cloud: your transit vpc for this lab
->IP Range Selection: Choose 128 in the Number of adddress drop down (this should create a subnet of 10.100.200.0/25)
->attach a public gateway for update
->Click Create Subnet
->
->
->Location: Washington DC 3
->Name: sn-client-ta-demo
->Resource Group: Default
->Virtual Private Cloud: your transit vpc for this lab
->IP Range Selection: Choose 128 in the Number of adddress drop down (this should create a subnet of 192.168.50.0/25)
->attach a public gateway for update
->Click Create Subnet
->
+>Location: Washington DC 1<br>
+>Name: sn-vnf-ta-transit<br>
+>Resource Group: Default<br>
+>Virtual Private Cloud: your transit vpc for this lab<br>
+>IP Range Selection: Choose 128 in the Number of adddress drop down (this should create a subnet of 10.100.200.0/25)<br>
+>attach a public gateway for update<br>
+>Click Create Subnet<br>
+><br>
+><br>
+>Location: Washington DC 3<br>
+>Name: sn-client-ta-demo<br>
+>Resource Group: Default<br>
+>Virtual Private Cloud: your transit vpc for this lab<br>
+>IP Range Selection: Choose 128 in the Number of adddress drop down (this should create a subnet of 192.168.50.0/25)<br>
+>attach a public gateway for update<br>
+>Click Create Subnet<br>
+><br>
 >
 # Create Windows Client in transit VPC
 1. You should be at you list of subnets in the region, click the subnet you just created in zone 1
