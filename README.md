@@ -363,8 +363,8 @@ Your Instance should be running now.
 	>The correct location should be selected but if not, choose the same Location as you VPC that you created above
 	>
 	>***Name:*** in-us-east-ta-demo02<br>
-	>***Resource Group:*** Default
-	>***Operating System:*** Ubuntu 20.04
+	>***Resource Group:*** Default<br>
+	>***Operating System:*** Ubuntu 20.04<br>
 	>***Profile:*** Click 'view all profiles', select memory and choose 'mx2-2x16'<br>
 	>***SSH keys:*** tavpclab<br>
 	>***User Data:*** Copy and paste the the [user_data](instance-user-data) file provided in github<br><br>
