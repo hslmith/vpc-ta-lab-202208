@@ -245,7 +245,7 @@ ibmcloud target -r us-east
 ~~~
 ibmcloud is instances
 ~~~
-2. Using the instance id for your windows instance from the above output, run the following command replacing 'INSTANCE_ID with the ID found in the previous list' and the path to you private key after the '@'.  The output should provide you with a password that you can now use to login to you windows instance via RDP.
+2. Using the instance id for your windows instance from the above output, run the following command replacing 'INSTANCE_ID with the ID found in the previous list' and the path to your private key after the '@'.  The output should provide you with a password that you can now use to login to you windows instance via RDP. NOTE: Windows users may need to use the full path. i.e. 'C:\users\labuser\ssh\privatekey'
 ~~~
 ibmcloud is instance-initialization-values INSTANCE_ID --private-key @~/.ssh/id_rsa
 ~~~
