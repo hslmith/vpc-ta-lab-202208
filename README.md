@@ -141,7 +141,7 @@ A transit "Hub" VPC serves as a centralized point for routing network traffic to
 	Hosting Type: Public
 	The correct location should be selected but if not, choose the same Location as you VPC that you created above (Zone 3)
 
-	>***Name:*** in-<em>selected region</em>in-ta-client-demo01<br>
+	>***Name:*** in-<em>selected region</em>-in-ta-client-demo01 ex. in-us-east-ta-client-demo01<br>
 	>***Resource Group:*** Default<br>
 	>***Operating System:*** Windows Server 2022 <br>
 	>***Profile:*** mx2-2x16<br>
@@ -162,7 +162,7 @@ This will take you back to the ‘Virtual Server’ list and you should see your
 1. You should be at you list of virtual machines in the region.
 2. In this list, you should also see your transit next to the instance you just created, click into the VPC.
 3. While in the VPC windows, scroll down to 'Subnets in this VPC' section.
-4. Click the subnet you created for zone 1
+4. Click the subnet you created for zone 1 (sn-vnf-ta-transit)
 2. While in the subnet window, click the ‘Attached Resources’ tab across top
 4. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
 	
@@ -194,17 +194,21 @@ This will take you back to the ‘Virtual Server’ list and you should see your
 
 4. Click the refresh icon <img src="/assets/images/refresh_icon.png" width="40" height="40"> (top right in the header of the instance list.<br>
 Your Instance should be running now.
-5. Enter your instance via the hyper link in the link 
-	>Note: If you added console permissions to your user account, you can access the vnc or serial console from the actions menu in the top right hand corner.
 
-## Add a floating IP to your client (and to VNF for admin purposes)
-1. Scroll down to the ‘Network Interfaces’ section at the bottom of the screen.
+
+## Add a floating IP to your windows client and to CentOS VNF for admin purposes and enable IP spoofing
+1. Enter your VNF instance via the hyper link in the link 
+2. Scroll down to the ‘Network Interfaces’ section at the bottom of the screen.
 2. Click the ‘edit’ pencil icon on the line of your network interface.<br>
 ![-](/assets/images/sc-pencil-nic.png)
-3. In the slide out window you will see a option for ‘Floating IP Address’.  In that drop down, select ‘Reserve a New Floating IP’
+3. In the slide out window you will see a option for 'Allow IP Spoofing, turn this ON. Below you will see ‘Floating IP Address’.  In that drop down, select ‘Reserve a New Floating IP’
 4. Click ‘Save’
-5. Within about 10 seconds, you should see a publicly accessible IP address appear in your Network Interface line.  Click the IP which will copy it.
-6. Paste the IP in any available web browser. You should have a functioning website.
+5. Within about 10 seconds, you should see a publicly accessible IP address appear in your Network Interface line.
+6. Head back to the list of virtual instances and enter your windows client and we will ONYL ADD A FLOATING IP to the client.
+7. Scroll down to the ‘Network Interfaces’ section at the bottom of the screen.
+8. Click the ‘edit’ pencil icon on the line of your network interface.
+9. In the slide out window you will see ‘Floating IP Address’.  In that drop down, select ‘Reserve a New Floating IP’
+4. Click ‘Save’
 
 ### Add new Security group just for RDP and outbound
 1. Click the Security Group Menu Option on the left
@@ -220,11 +224,11 @@ Your Instance should be running now.
 >
 >CREATE RULE OUTBOUND
 >PORT RANGE: ANY
->Dsetination: Any
+>Destination: Any
 >
->4. Now that you created a SG that will allow RDP to your windows client, enter the details of the SG and click the attached resources tab.
->5. Under the attached interfaces section, click Edit Interfaces
->6. Choose eth0 of your Windows client instance
+>
+>5. Under the 'Edit Interfaces' Section, tick the box that corresponds to your client VSI. 
+>6. Click 'Create Security Group'
 <br>
 
 ### Decrypt your Windows Server Instance password  
