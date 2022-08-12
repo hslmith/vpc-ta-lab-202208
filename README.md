@@ -107,7 +107,7 @@ A transit "Hub" VPC serves as a centralized point for routing network traffic to
 10. Go back to the overview tab, scroll down and click to create 2 subnets in your shiny new VPC.
 
 >Location: Washington DC 1<br>
->Name: sn-vnf-ta-transit<br>
+>Name: ~~~ sn-vnf-ta-transit~~~<br>
 >Resource Group: Default<br>
 >Virtual Private Cloud: your transit vpc for this lab<br>
 >IP Range Selection: Choose 128 in the Number of adddress drop down (this should create a subnet of 10.100.200.0/25)<br>
