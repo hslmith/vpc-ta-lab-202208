@@ -403,7 +403,7 @@ Your Instance should be running now.
 	
 	>Click Black "Create +" Button<br>
 	>***Name:*** pool-ta-work-demo<br>
-	>***Protocol:*** HTTP<br>
+	>***Protocol:*** TCP<br>
 	>***Session Stickiness:*** none<br>
 	>***Proxy Protocol:*** Disabled<br>
 	>***Method:*** Round Robin<br>
@@ -428,7 +428,7 @@ This will take a couple of minutes to create
 
 
 ## Enable packet forwarding on CENTOS 7
-login as root using the ssh you added to the portal above and issue the following command
+login as root using the ssh key you added to the portal above and issue the following command
 ~~~
 sysctl -w net.ipv4.ip_forward=1
 ~~~
