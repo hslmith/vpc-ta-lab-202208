@@ -452,7 +452,7 @@ sysctl -w net.ipv4.ip_forward=1
 ### Deploy Transit Gateway vi CLI
 1. Run the following command to see a list of possible locations
 ~~~
-bmcloud tg locations
+ibmcloud tg locations
 ~~~
 2. Using the appropiate location create a transit gateway using the following command
 ~~~
