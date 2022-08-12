@@ -435,11 +435,16 @@ sysctl -w net.ipv4.ip_forward=1
 
 ## Edit Routing tables
 1. Navigate to routing tables
-2. Create new routing table 
-3. Name: ingress-client
-4. VPC: your transit VPC
-5. Traffic: Ingress
-6. AIngress Properties: VPC Zone
+2. Choose the Transit VPC from the drop down
+3. Enter the default routing table via the link
+4. Click Create 
+5. ENter the following details
+><br>
+>Name: vnf-egress<br>
+>Destination CIDR: <br>
+>Action: Deliver<br>
+>Next Hop: The Private IP of your VNF (Most likely 10.100.200.4)<br>
+><br>
 
 
 ## Deploy IBM CLoud Service
