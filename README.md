@@ -458,7 +458,7 @@ ibmcloud tg locations
 ~~~
 TECHLAB_TGW_ID=$(ibmcloud tg gwc --name tgw-ta-demo --location us-east --output json | jq -r .id)
 ~~~
-Retrieve the CRN's of your VPC to add as connections
+Retrieve the CRN's of your VPCs to add as connections. You may need to replace the name of your VPC in the first two commands to match.
 ~~~
 TRANSIT_VPC_CRN=$(ibmcloud is vpc vpc-us-east-ta-transit-demo --output json | jq -r .crn)
 ~~~
