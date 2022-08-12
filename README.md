@@ -120,7 +120,11 @@ A transit "Hub" VPC serves as a centralized point for routing network traffic to
 ><br>
 ><br>
 >Location: Washington DC 3<br>
->Name: sn-client-ta-demo<br>
+>Name: 
+>~~~ 
+>sn-client-ta-demo
+>~~~ 
+><br>
 >Resource Group: Default<br>
 >Virtual Private Cloud: your transit vpc for this lab<br>
 >IP Range Selection: Choose 128 in the Number of adddress drop down (this should create a subnet of 192.168.50.0/25)<br>
@@ -129,7 +133,7 @@ A transit "Hub" VPC serves as a centralized point for routing network traffic to
 ><br>
 >
 # Create Windows Client in transit VPC
-1. You should be at you list of subnets in the region, click the subnet you just created in zone 1
+1. You should be at you list of subnets in the region, click the subnet you just created in zone 3 (sn-client-ta-demo)
 2. While in the subnet window, click the ‘Attached Resources’ tab across top
 4. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
 	
