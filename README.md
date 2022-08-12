@@ -144,11 +144,6 @@ A transit "Hub" VPC serves as a centralized point for routing network traffic to
 	
 	>
 	>***SSH keys:*** tavpclab<br>
-
-
-	<br><br><br>
-	![-](/assets/images/sc-github.png)
-		
 	>Scroll down to Networking Section<br>
 	>Select you VPC you created in earlier step<br>
 	>Double check your parameters<br>
