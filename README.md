@@ -250,6 +250,7 @@ ibmcloud is instances
 ibmcloud is instance-initialization-values INSTANCE_ID --private-key @~/.ssh/id_rsa
 ~~~
 
+3. Make a note of your windows password
 
 
 ## Create your Work Load VPC
