@@ -152,7 +152,7 @@ A transit "Hub" VPC serves as a centralized point for routing network traffic to
 This will take you back to the ‘Virtual Server’ list and you should see your instance in a starting state.  This will take a couple of minutes.
 
 
-## Create VNF in transit VPC
+## Create VNF virtual machine in transit VPC
 1. You should be at you list of subnets in the region, click the subnet you just created in zone 1
 2. While in the subnet window, click the ‘Attached Resources’ tab across top
 4. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
@@ -166,15 +166,10 @@ This will take you back to the ‘Virtual Server’ list and you should see your
 	>***Operating System:*** CeentOS-7<br>
 	>***Profile:*** bx2-2x8<br>
 
-	![-](/assets/images/sc-profiles-memory.png)<br>
+	![-](/assets/images/sc-profiles-balanced.png)<br>
 	
 	>
 	>***SSH keys:*** tavpclab<br>
-
-
-	<br><br><br>
-	![-](/assets/images/sc-github.png)
-		
 	>Scroll down to Networking Section<br>
 	>Select you VPC you created in earlier step<br>
 	>Edit the interface and enable "Allow IP Spoofing"
