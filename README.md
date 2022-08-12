@@ -269,9 +269,9 @@ ibmcloud is instance-initialization-values INSTANCE_ID --private-key @~/.ssh/id_
 
 ## Edit Security Group
 The last operation should return to your list of VPCs in the region you have been working with.<br>
-1. Enter your VPC's. (vpc-us-east-ta-work1-demo) default security group via the link in the list
+1. Enter your VPC (vpc-us-east-ta-work1-demo) via the link in the list
 2. Open Security Group for port 80
-	1. In the top right tile, locate ‘Default Security Group’ section and enter the security group via the link.
+	1. In the top left tile, locate ‘Default Security Group’ section and enter the security group via the link.
  	2. In the SG window, click the ‘Manage Rules’ in the bottom left tile. Alternatively, you can navigate to the rules using rules tab across the top.
 	3. Create an Inbound Rule to allow port 80.
 		1. Click ‘Create +’ in the ‘Inbound Rules’ section.
