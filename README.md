@@ -440,6 +440,7 @@ sysctl -w net.ipv4.ip_forward=1
 4. Click Create 
 5. ENter the following details
 ><br>
+>Zone: Zone 3
 >Name: vnf-egress<br>
 >Destination CIDR: <br>
 >Action: Deliver<br>
