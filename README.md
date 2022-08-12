@@ -60,11 +60,9 @@ I have chosen **Washington DC us-east** for this lab
 
 
 ## Add your SSH Key in the IBM Cloud Portal
-Before you can add a key in the IBM Cloud console, you must make your SSH key available. Your SSH key must be an RSA key with a key size of either 2048 bits or 4096 bits.
-Yyou can either [create a new SSH key](https://cloud.ibm.com/docs/vpc?topic=vpc-ssh-keys#locating-ssh-keys), use an existing SSH key on your machine or use the one provided in the github repo.
+We will use the key you created during the prework.  If you have not already added it to the cloud portal, please follow the directions below.
 
-
-if you choose to use the provided ssh key, copy the [public key](pubkey_rsa) from the github repo.
+If you do not have one created,  [Create a SSH Key](https://cloud.ibm.com/docs/vpc?topic=vpc-ssh-keys#locating-ssh-keys).
 
 1. Expand the Compute Menu and select ‘SSH Keys’
 2. Choose your region that you want to complete this lab in from the drop down in the header.
