@@ -483,11 +483,11 @@ ibmcloud tg connections $TECHLAB_TGW_ID
 ~~~
 DNS_INSTANCE=$(ibmcloud dns instance-create dns-tech-lab 2c8fa097-d7c2-4df2-b53e-2efb7874cdf7 --resource-group Default --output json | jq -r .guid)
 ~~~
-2. Create a new zone in your newly created instnace 
+2. Create a new zone in your newly created instance 
 ~~~
 DNS_ZONE_ID=$(ibmcloud dns zone-create techlab.com -i $DNS_INSTANCE --output json | jq -r .id)
 ~~~
-3. to Add Permitted Netowrks to your zone.  We first need to find the crn of your exising VPC's. Run the following command and replace the name of your vpc with your vpc.
+3. to Add Permitted Networks to your zone.  We first need to find the crn of your existing VPC's. Run the following command and replace the name of your vpc with your vpc.
 ~~~
 TRANSIT_VPC_CRN=$(ibmcloud is vpc vpc-us-east-ta-transit-demo --output json | jq -r .crn)
 ~~~
@@ -504,7 +504,7 @@ WORK_PERMITTED_NET_ID=$(ibmcloud dns permitted-network-add $DNS_ZONE_ID --vpc-cr
 ~~~
 
 
-5. Finally add a 'CNAME' record for your network load balancer instance. Retrieve the loadbalancer hostname (replace the name of the load balancer with your)
+5. Finally add a 'CNAME' record for your network load balancer instance. Retrieve the loadbalancer host name (replace the name of the load balancer with your)
 ~~~
 NLB_HOSTNAME=$(ibmcloud is load-balancer nlb-us-east-ta-pri-demo --output json | jq -r .hostname)
 ~~~
@@ -514,9 +514,13 @@ ibmcloud dns resource-record-create $DNS_ZONE_ID --type CNAME --name www --cname
 ~~~
 
 
+##Test your deployment
+1. Using an RDP client, connect to you windows server using the password you decrypted earlier
+2. Open a browser and browse to www.techlab.com
 
 
-# Destroy your Items
+
+# Please Destroy your resources once complete
 
  
 
