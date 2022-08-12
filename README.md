@@ -71,7 +71,7 @@ If you do not have one created,  [Create a SSH Key](https://cloud.ibm.com/docs/v
 	
 >Name: tavpclab<br>
 >Resource Group: Default<br>
->Public Key: Paste the public key you either created in the optional section above(id_rsa.pub) or copy and paste (pubkey_rsa) from github<br>
+>Public Key: Paste your public key you created in the optional section above(id_rsa.pub)<br>
 ![-](/assets/images/sshkey-create.png)
 
 Click Create<br>
