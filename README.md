@@ -16,12 +16,12 @@ The CLI portion of this lab uses session variables that may not persist if you l
 
 - Check for user permissions. Be sure that your user account has sufficient permissions to create and manage IBM Cloud VPC resources.
 - By default, the permission needed to "enable IP Spoofing" if turned off, you will need to add it to your profile via IAM.
-	+ IN the MANAGE menu across the top, choose Access (IAM).
+	+ In the MANAGE menu across the top, choose Access (IAM).
 	+ Click Users in the left navigation
 	+ Enter your profile by clicking on your name.
 	+ Choose the 'Access' tab across the top.
 	+ Click Blue 'Assign Access+' button.
-	+ YOu want Access Policy chosen for an individual.
+	+ You want Access Policy chosen for an individual.
 	+ IN Service, Search for 'VPC Infrastructure Services'
 	+ Click Blue Next
 	+ Resources: All Resources -> Next
