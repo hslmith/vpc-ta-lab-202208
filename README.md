@@ -31,7 +31,7 @@ The CLI portion of this lab uses session variables that may not persist if you l
 	+ Lastly, click Assign
 	+ You will receive an error if the access policy already exists on your profile.
 
-[-](/assets/images/iam-vpc.png)<br>
+![-](/assets/images/iam-vpc.png)<br>
 
 
 
