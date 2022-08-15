@@ -15,6 +15,19 @@ You will deploy the following services by the end of this lab.
 The CLI portion of this lab uses session variables that may not persist if you logout or close your terminal.
 
 - Check for user permissions. Be sure that your user account has sufficient permissions to create and manage IBM Cloud VPC resources.
+- By default, the permission needed to "enable IP Spoofing" if turned off, you will need to add it to your profile via IAM.
+	+ IN the MANAGE menu across the top, choose Access (IAM).
+	+ Click Users in the left navigation
+	+ Enter your profile by clicking on your name.
+	+ Choose the 'Access' tab across the top.
+	+ Click Blue 'Assign Access+' button.
+	+ YOu want Access Policy chosen for an individual.
+	+ IN Service, Search for 'VPC Infrastructure Services'
+	+ Click Blue Next
+	+ Resources: All Resources -> Next
+	+ Under Roles and Actions, you want to choose IP Spoofing Operator, while your at it go ahead and add Console Administrator as well.
+
+[-](/assets/images/iam-vpc.png)<br>
 
 The following multi-zone architecture will be used
 
@@ -231,7 +244,7 @@ Your Instance should be running now.
 >6. Click 'Create Security Group'
 <br>
 
-### Decrypt your Windows Server Instance password  
+### Decrypt your Windows Server Instance password
 1. Locate and take note of your instance id using the IBM CLOUD CLI.  Start by logging in.
 ~~~
 ibmcloud login --sso
@@ -353,7 +366,7 @@ Your Instance should be running now.
 4. In the bottom right-hand corner, turn on the ‘Public Gateway’ tick box to Attached
 5. Click Attach on modal window.
 
-## Create Virtual Machine in  Zone 2 
+## Create Virtual Machine in  Zone 2
 1. If you are no longer on the VPC detatil, navigate to your VPC using the VPCs menu option.
 2. While in the VPC window, click the ‘Attached Resources’ tab across top
 3. Choose the blue ‘Create +’ button in the top right of the ‘Attached Instances’ section
