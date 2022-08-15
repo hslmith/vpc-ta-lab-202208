@@ -26,8 +26,15 @@ The CLI portion of this lab uses session variables that may not persist if you l
 	+ Click Blue Next
 	+ Resources: All Resources -> Next
 	+ Under Roles and Actions, you want to choose IP Spoofing Operator, while your at it go ahead and add Console Administrator as well.
+	+ Click 'Review'
+	+ Then blue 'Add' button and now it should be in your cart on the right.
+	+ Lastly, click Assign
+	+ You will receive an error if the access policy already exists on your profile.
 
 [-](/assets/images/iam-vpc.png)<br>
+
+
+
 
 The following multi-zone architecture will be used
 
