@@ -31,12 +31,12 @@ The CLI portion of this lab uses session variables that may not persist if you l
 	+ Lastly, click Assign
 	+ You will receive an error if the access policy already exists on your profile.
 
-![-](/assets/images/iam-vpc.png)<br>
+![-](/assets/images/iam-vpc.png)<br><br><br>
 
 
 
 
-The following multi-zone architecture will be used
+###The following multi-zone architecture will be used
 
 ![-](/assets/images/TA-LAB-TransitDemo.png)<br>
 
